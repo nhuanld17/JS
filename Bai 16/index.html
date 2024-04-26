@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // var a = 10;
+        // if (a > 5) {
+        //     console.log("a > 5");
+        // } else{
+        //     console.log("a <= 5");
+        // }
+
+        // var a = 10;
+        // var b = 12;
+        
+        // IF ELSE LỒNG NHAU
+
+        // if (a == undefined && b == undefined) {
+        //     console.log("a và b chưa có giá trị");
+        // }else{
+        //     console.log(a+b);
+        // }
+
+
+        // IF ELSE RÚT GỌN - TOÁN TỬ 3 NGÔI
+        // var a = 10;
+        // var res = (a > 5) ? "a>5" : "a<5";
+        // console.log(res);
+
+        // VÒNG LẶP FOR 
+
+        // for (let I = 0; I < 10; I++) {
+        //     console.log(I);          
+        // }
+
+
+        // VÒNG LẶP FOR IN
+        var userInfor = {
+            fullName : "Nhuaanj",
+            age : 18,
+            address : "Huế",
+        };
+
+        console.log(userInfor);
+
+        for (const key in userInfor) {
+            console.log(key, userInfor[key]);
+        }
+
+
+        // VÒNG LẶP FOR OF
+        var user = ["le van a","la van b","Le van D"];
+
+        for (const iterator of user) {
+            console.log(iterator);
+        }
+
+
+        var object = [
+            {
+                name:"Le Van A",
+                age: 18
+            },
+            {
+                name: "Le Van B",
+                age: 19
+            },
+            {
+                name: "Le Van C",
+                age:20
+            }
+        ];
+
+        for (const iterator of object) {
+            console.log(iterator);
+        }
+
+    </script>
+
+
+    <script>
+        // BIẾN
+        
+
+        // Từ khóa let
+        // let chỉ có phạm vi trong khối khai báo mà thôi
+        // Vì vậy nó sẽ tối ưu trong trường hợp bạn cần khai báo 1 biến chỉ sử dụng
+        // tạm thời trong 1 phạm vi nhất định hay còn gọi là block scope
+
+        // if (true) {
+        //     let a = 10;
+        //     console.log(a); // 10;
+        // }
+
+        // console.log(a);// a is not defined
+
+
+        // TỪ KHÓA CONST
+        // Tương tự như let tuy nhiên giá trị của biến const là hằng số
+        if(true){
+            const b = 10;
+            b = 20;
+            console.log("b = "+b);// Uncaught TypeError: Assignment to constant variable.
+        }
+
+
+    </script>
+
+</body>
+</html>
