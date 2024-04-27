@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // function sum(a, b){
+        //     return a + b;
+        // }
+        // let result = sum(10 , 20);
+        // console.log(result);
+
+        // ================================================================================
+
+        // Đối tượng argument: Chỉ dùng được ở trong hàm. Giả sử khi gọi hàm và truyền đối
+        // số vào thì tất các các đối số sẽ được nằm trong arguments dưới dạng mảng
+        // Nếu đặt trùng tên hàm khi ta gọi hàm thì việc gọi hàm này sẽ chạy vào hàm
+        // cuối cùng
+
+        // Nếu 1 biến được định nghĩa ở trong function thì biến đó chỉ được sử dụng ở
+        // trong function đó thôi( kể cả biến var). Nhưng khai báo biến var trong if/ else
+        // thì bên ngoài vẫn gọi được
+
+        // Nếu hàm A nằm trong hàm B thì hàm A chỉ gọi được ở trong hàm B thôi, không
+        // gọi được hàm A ở bên ngoài
+        // function sum(){
+        //     console.log(arguments); // [10, 20, 30, 40, callee: ƒ, Symbol(Symbol.iterator): ƒ]
+        //     let tong = 0;
+        //     for (const item of arguments) {
+        //         console.log(item);
+        //         tong += item;
+        //     }
+
+        //     return tong;
+        // }
+        // let result = sum(10, 20, 30, 40);
+        // console.log(result);
+
+
+        // function funcA(){
+        //     console.log("Hàm A");
+
+        //     function funcB(){
+        //         console.log("Hàm B");
+        //     }
+
+        //     funcB();
+        // }
+
+        // funcA();
+    </script>
+
+    <script>
+        // Hàm định nghĩa
+        // Có tính hoisting(tức là gọi được hàm trước lúc khai báo hàm đó)
+        // Cú pháp:
+        // function functionName(argument1, argument2,..){
+        //     // Code
+        // }
+
+        // let result = Sum(10, 20, 30, 40, 50);
+        // console.log(result); // 150
+
+        // function Sum(){
+        //     let tong = 0;
+        //     for (const item of arguments) {
+        //         tong += item;
+        //     }
+        //     return tong;
+        // }
+
+        // Hàm biểu thức - Expression function (Không có tính hoisting)
+        // Nếu gọi hàm trước lúc khai báo hàm sẽ gặp lỗi
+
+        // Cú pháp
+        // var functionName = function(argument1, argument2,...){
+        //     //Code
+        // }
+
+
+        // var Sum = function(){
+        //     let tong = 0;
+        //     for (const item of arguments) {
+        //         tong += item;
+        //     }
+        //     return tong;
+        // }
+        // let result = Sum(20, 30, 40);
+        // console.log(result); // 90
+    </script>
+
+    <script>
+        // Arrow Function (hàm mũi tên)
+        // Không có tính Hoisting(Nếu gọi hàm trước lúc khai báo hàm sẽ gặp lỗi)
+        // Cú pháp:
+        // var functionName = (argument1, argument2,,...) =>{
+        //     // Code;
+        // }
+
+        // Lưu ý: Arrow Function sẽ không có Arguments. Để lấy các đối số đã truyền
+        // dưới dạng một mảng thì chúng ta sẽ sử dụng cú pháp spread
+
+        // caculateSum(); //Uncaught ReferenceError: Cannot access 'caculateSum' before initialization
+        // const caculateSum = () => {
+        //     console.log("OK");
+        // }
+
+        // caculateSum();
+
+        // Lưu ý: Arrow Function sẽ không có Arguments. Để lấy các đối số đã truyền
+        // dưới dạng một mảng thì chúng ta sẽ sử dụng cú pháp spread
+        // VD:
+        // const caculateSum = (...args) => {
+        //     let tong = 0;
+        //     for (const item of args) {
+        //         tong += item;
+        //     }
+        //     return tong;
+        // }
+
+        // let result = caculateSum(10, 20, 30, 40);
+        // console.log(result); // 100
+
+        // VD1 Tính tổng các số chẵn của mảng
+        // var array = [1,2,3,4,5,6,7,8,9,10];
+
+        // function SumEvenNumber(mang){
+        //     let tong = 0;
+        //     for (const item of mang) {
+        //         if (item % 2 == 0) {
+        //             tong += item;
+        //         }
+        //     }
+        //     return tong;
+        // }
+
+        // let result = SumEvenNumber(array);
+        // console.log(result); // 30
+
+        // VD 2; Viết chương trình cho người dùng nhập vào số n > 0, sau đó dựa vào n
+        // tính giá trị của biểu thức S = 1/n + 2/n + .. + n/n.
+
+        // function caculateS(n){
+        //     let res = 0;
+        //     for (let i = 1; i <= n; i++) {
+        //         res = res + i/n;
+        //     }
+        //     return res;
+        // }
+
+        // let n = prompt("Nhập n: ");
+        // n = parseInt(n);
+
+        // while (n <= 0) {
+        //     n = prompt("Nhập lại n > 0");
+        //     n = parseInt(n);
+        // }
+
+        // console.log(n);
+        // let result = caculateS(n);
+        // console.log(result);
+    </script>
+
+    <script>
+        // Try Catch
+    </script>
+
+</body>
+
+</html>
