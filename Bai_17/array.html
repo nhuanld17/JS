@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //forEach: Duyệt qua từng phần tử của mảng và thực hiện hành động nào đó
+        // Có thể thay đổi trực tiếp mảng ban đầu
+        // Cú pháp:
+        // arr.array.forEach(
+        //     function(currentValue, index, array){
+        //         // Code
+        //     }
+        // );
+
+        // var a = [1,2,3,4,5,6,7,8,9,10];
+        // let tong = 0;
+
+        // a.forEach(function(item, index, a){
+        //     tong += item;
+        //     a[index] = 20;
+        // });
+
+        // console.log(tong); //55
+        // console.log(a);
+
+
+        // every(): Kiểm tra all phần tử của một mảng phải thỏa mãn
+        // với một điều kiện gì đó
+        // Cú pháp:
+        // array.every(function(currentValue,index,array){
+        //     // Code
+        // });
+
+        // const monHoc = [
+        //     {
+        //         ten: "Toán",
+        //         diem: 8.6
+        //     },
+        //     {
+        //         ten: "Lí",
+        //         diem: 9,
+        //     },
+        //     {
+        //         ten: "Hóa",
+        //         diem: 10,
+        //     },
+        // ];
+
+        // const hocSinhGioi = monHoc.every(
+        //     function(item){
+        //         return item.diem >= 8;
+        //     }
+        // );
+
+        // console.log(hocSinhGioi);
+
+        // if (hocSinhGioi) {
+        //     console.log("Học sinh giỏi");
+        // }else{
+        //     console.log("Học sinh không giỏi");
+        // }
+    </script>
+
+    <script>
+        // some(): Kiểm tra chỉ cẩn 1 phần tử của một mảng thỏa mãn
+        // một điều kiện gì đó là được
+        // Cú pháp:
+        // array.some(function(currentValue, index, array){
+        //     // Code
+        // });
+
+        // const monHoc = [
+        //     {
+        //         ten: "Toán",
+        //         diem: 8.6
+        //     },
+        //     {
+        //         ten: "Lí",
+        //         diem: 9,
+        //     },
+        //     {
+        //         ten: "Hóa",
+        //         diem: 4,
+        //     },
+        // ];
+
+        // const luuBan = monHoc.some(
+        //     function(item, index, monHoc){
+        //         return item.diem <= 4;
+        //     }
+        // );
+
+        // if(luuBan){
+        //     console.log("Ở lại lớp");
+        // }else{
+        //     console.log("Không ở lại lớp");
+        // }
+    </script>
+
+    <script>
+        // find():Tìm xem trong mảng có giá trị giống với giá trị cần tìm
+        // không, nếu có thì trả về chính phần tử của mảng đó, không thì
+        // trả về undefined
+
+        // Chỉ tìm được 1 phần tử trong mảng
+        // Cú pháp:
+        // array.find(function(currentValue, index, array){
+        //     // Code
+        // });
+
+        // const monHoc = [
+        //     {
+        //         ten: "Toán",
+        //         diem: 8.6
+        //     },
+        //     {
+        //         ten: "Lí",
+        //         diem: 9,
+        //     },
+        //     {
+        //         ten: "Hóa",
+        //         diem: 4,
+        //     },
+        //     {
+        //         ten: "Tin",
+        //         diem: 5,
+        //     }
+        // ];
+
+        // const xemDiemTin = monHoc.find(function(item){
+        //     return item.ten == "Tin";
+        // });
+
+        // console.log(xemDiemTin);
+
+    </script>
+
+    <script>
+        //filter(): Giống hàm find(), nhưng cho phép tìm được nhiều phần tử và trả
+        // về một mảng gồm các phần tử đã tìm được
+        // Cú pháp:
+        // array.filter(function(currentValue, index, array){
+        //     //Code
+        // });
+
+        // const monHoc = [
+        //     {
+        //         ten: "Toán",
+        //         diem: 8.6
+        //     },
+        //     {
+        //         ten: "Lí",
+        //         diem: 9,
+        //     },
+        //     {
+        //         ten: "Hóa",
+        //         diem: 4,
+        //     },
+        //     {
+        //         ten: "Tin",
+        //         diem: 5,
+        //     },
+        //     {
+        //         ten: "Tin",
+        //         diem: 10,
+        //     }
+        // ];
+
+        // const xemDiemTIn = monHoc.filter(function(item){
+        //     return item.ten == "Tin";
+        // });
+
+        // console.log(xemDiemTIn);
+
+        // xemDiemTIn.forEach(function(item){
+        //     console.log(item);
+        // });
+
+    </script>
+
+    <script>
+        // Hàm map(): sẽ lặp qua từng phần tử của mảng. Giá trị trả về của hàm map
+        // là 1 mảng mới, với số lượng phần tử bằng với mảng cũ, nhưng giá trị của
+        // các phần tử thì được quyết định bởi lệnh return của hàm map.
+
+        // var a = [1,2,3,4,5,6,7,8,9,10];
+
+        // let result = a.map(item => {
+        //     return item;
+        // });
+
+        // console.log(result);
+
+        // const monHoc = [
+        //     {
+        //         ten: "Toán",
+        //         diem: 8.6
+        //     },
+        //     {
+        //         ten: "Lí",
+        //         diem: 9,
+        //     },
+        //     {
+        //         ten: "Hóa",
+        //         diem: 4,
+        //     },
+        //     {
+        //         ten: "Tin",
+        //         diem: 5,
+        //     },
+        // ];
+
+        // const DanhGia = monHoc.map(item => {
+        //     let hocLuc = "";
+        //     if (item.diem >= 8) {
+        //         hocLuc = "Giỏi";
+        //     } else {
+        //         hocLuc = "Không giỏi";
+        //     }
+
+        //     return {
+        //         ten: item.ten,
+        //         hocLuc: hocLuc
+        //     };
+        // });
+
+        // console.log(DanhGia);
+
+    </script>
+
+    <script>
+        // reduce(): duyệt qua từng phần tử trong mảng và tính toán các phần tử đó
+        // sau đó trả về 1 giá trị cuối cùng
+        // Cú pháp:
+        // array.reduce(function(total, currentValue, index, array){
+        //     // CODE
+        // }, intialValue);
+
+        var a = [1,2,3,4,5,6,7,8,9,10];
+
+        // let sum = a.reduce((total, item) => {
+        //     return total + item;
+        // });
+
+        // console.log(sum);
+
+        let avg = a.reduce((total, item) => {
+            return total + item/a.length;
+        }, 0);
+
+        console.log(avg);
+
+
+        const monHoc = [
+            {
+                ten: "Toán",
+                diem: 8.6
+            },
+            {
+                ten: "Lí",
+                diem: 9,
+            },
+            {
+                ten: "Hóa",
+                diem: 4,
+            },
+            {
+                ten: "Tin",
+                diem: 5,
+            },
+        ];
+
+
+
+    </script>
+</body>
+
+</html>
