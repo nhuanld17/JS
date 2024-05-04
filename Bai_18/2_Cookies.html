@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="login()">Login</button>
+    <script>
+        /*====== COOKIES ======*/
+        // - Cookies là dữ liệu được lưu trữ trong 1 file text nằm trong máy tính, nên việc lưu trữ cookies sẽ là vĩnh viễn hoặc là một thời gian cụ thể, tất cả đều do coder thiết lập. 
+        // - Khi trình duyệt gửi thông tin lên server thì cookies sẽ được gửi kèm theo. Đây cũng là thông tin để trả lời cho câu hỏi tại sao Cookies được lưu trữ ở Client mà phía Server vẫn đọc được
+        // - Cookies được lưu trữ ở dạng name=value
+
+        // TẠO COOKIES
+        // Cú pháp: document.cookie = 'name = value';
+        // Để thiết lập thời gian sống cho cookie ta sử dụng từ khóa expires. Định dạng thời gian là UTC
+        
+        // function login() {
+        //     if (true) {
+        //         document.cookie = 'token=afdfjasasdasdas';// Vào tab Application->Cookies ở dev tool để xem cookies
+        //         //Max-Age: Session ==> Khi tắt trình duyệt thì Cookies sẽ không còn nữa
+        //     }
+        // }
+        
+        // Thiết lập thời gian sống cho Cookies: 
+        // expires: Thiết lập thời gian sống của Cookie tính bằng ngày giờ cụ thể
+        // max-age: Thiết lập thời gian sống của cookie tính bằng giây
+
+        // function login() {
+        //     if (true) {
+        //         var now = new Date();
+        //         now.setTime(now.getTime() + (1 * 3600 * 1000)); // Thời gian hiện tại cộng thêm 1 giờ
+        //         var expires = now.toUTCString();
+        //         document.cookie = 'username=nhuanjrt; expires=' + expires;
+        //         document.cookie = 'mail=oke@gmail.com; max-age=10'; // Cookie sẽ tồn tại trong 10 giây
+        //     }
+        // }
+
+        // Thiết lập thời gian sống cho COOKIE bằng hàm setCookies:
+        function setCookie(cname, cvalue, exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays*24*60*60*1000));
+            var expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + "; " + expires;
+        }
+
+        function login() {
+            if (true) {
+                setCookie("token","asdasdasd", 1);// Thời gian sống là 1 ngày
+                setCookie("name","nhuan", 1);
+                setCookie("mail","nhuan@gmail.com", 1);
+            }
+        }
+
+        // LẤY GIÁ TRỊ COOKIES
+        // Cú pháp: var giatri = document.cookies;
+        // Lúc này kết quả sẽ trả về một chuỗi Cookies có cấu trúc name=value, trường hợp bạn lưu nhiều cooikes thì nó sẽ có dạng name1=value1; name2=value2.
+
+        // var allCookie = document.cookie;
+        // console.log(allCookie);
+
+        // HOẶC LẤY GIÁ TRỊ COOKIES BẰNG HÀM getCookies();
+        // function getCookie(cname) {
+        //     // Tạo chuỗi tên cookie cần tìm, kèm theo dấu "=" để tạo thành khóa đầy đủ.
+        //     var name = cname + "=";
+        //     // Lấy chuỗi cookie từ document.cookie và chia nó thành một mảng các cookie riêng biệt dựa trên dấu chấm phẩy.
+        //     var ca = document.cookie.split(';');
+        //     // Lặp qua mảng các cookie.
+        //     for (var i = 0; i < ca.length; i++) {
+        //         // Gán cookie hiện tại vào biến c.
+        //         var c = ca[i];
+        //         // Loại bỏ các khoảng trắng ở đầu chuỗi cookie, nếu có.
+        //         while (c.charAt(0) == ' ') {
+        //             c = c.substring(1);
+        //         }
+        //         // Kiểm tra xem chuỗi cookie hiện tại có bắt đầu bằng tên cookie cần tìm không.
+        //         if (c.indexOf(name) == 0) {
+        //             // Nếu có, trả về phần còn lại của chuỗi sau tên cookie, tức là giá trị của cookie.
+        //             return c.substring(name.length, c.length);
+        //         }
+        //     }
+        //     // Nếu không tìm thấy cookie với tên tương ứng, trả về chuỗi rỗng.
+        //     return "";
+        // }
+
+        // let mail = getCookie("mail");
+        // console.log("mail: "+mail); // mail: nhuan@gmail.com
+        // let token = getCookie("token");
+        // console.log("token:"+token);// token:asdasdasd
+
+        // ĐỔI GIÁ TRỊ CHO COOKIE
+        // Để đổi giá trị của cookie, chỉ cần gán lại giá trị cho cookie
+        // Cú pháp document.cookie = 'name=value';
+
+        // XÓA COOKIE
+        // Chỉ cần xét lại giá trị ngày hết hạn expires về thời gian trước đó
+        // Cú pháp: document.cookie="username=abc; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+
+        // XÓA COOKIE BẰNG HÀM deleteCookie;
+        function deleteCookie(cname) {
+            document.cookie = `${cname}=; expires=Thu, 01 Jan 1970 00:00:00 UTC`;
+        }
+
+        var allCookie = document.cookie;
+        console.log(allCookie);
+        deleteCookie("mail");
+        console.log(allCookie);
+    </script>
+</body>
+</html>

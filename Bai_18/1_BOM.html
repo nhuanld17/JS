@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        - BOM là chữ viết tắt của Browser Object Model, hay còn gọi là các đối tượng liên quan đến trình duyệt.
+        - Các BOM giúp ta viết được lịch sử lướt web, lưu các hành động và trạng thái của người dùng trên trang.
+        - Các loại BOM:
+        + window
+        + screen
+        + location
+        + history
+        + navigator
+        + popup
+        + timing
+        + cookies
+        */
+
+        /*
+        - BOM WINDOW: là 1 đối tượng có những phương thức và thuộc tính được dùng để xử lí trình duyệt
+        - Có cấp độ cao nhất
+        */
+        // console.log(window);
+        // Lệnh console.log(window) trong JavaScript được sử dụng để in ra toàn bộ đối tượng window vào hộp thoại giao diện console của trình duyệt. window là một đối tượng toàn cục, nghĩa là nó có sẵn trong tất cả các script bạn đang viết. Đối tượng này chứa nhiều thuộc tính, phương thức và sự kiện liên quan đến cửa sổ trình duyệt hiện tại.
+        // Ví dụ, nếu bạn muốn xem thông tin về màn hình hiện tại, bạn có thể gõ console.log(window.screen). Hoặc nếu bạn muốn xem những biến toàn cục nào đang được sử dụng, bạn có thể gõ console.log(window) và xem toàn bộ danh sách.
+    </script>
+
+    <button onclick="openTab()">
+        Mở tab mới
+    </button>
+    <button onclick="closeTab()">
+        Đóng tab vừa mở
+    </button>
+
+    <script>
+        // ==================== BOM WINDOW ===================
+
+                /*
+        - BOM WINDOW: là 1 đối tượng có những phương thức và thuộc tính được dùng để xử lí trình duyệt
+        - Có cấp độ cao nhất
+        */
+        // console.log(window);
+
+        // Lệnh console.log(window) trong JavaScript được sử dụng để in ra toàn bộ đối tượng window vào hộp thoại giao diện console của trình duyệt. window là một đối tượng toàn cục, nghĩa là nó có sẵn trong tất cả các script bạn đang viết. Đối tượng này chứa nhiều thuộc tính, phương thức và sự kiện liên quan đến cửa sổ trình duyệt hiện tại.
+        // Ví dụ, nếu bạn muốn xem thông tin về màn hình hiện tại, bạn có thể gõ console.log(window.screen). Hoặc nếu bạn muốn xem những biến toàn cục nào đang được sử dụng, bạn có thể gõ console.log(window) và xem toàn bộ danh sách.
+
+        // innerHeight VÀ innerWidth
+        //innerHeight: lấy chiều cao của tài liệu
+        //innerWidth: lấy chiều rộng của tài liệu
+
+        // Cú pháp:
+        // window.innerHeight
+        // window.innerWidth
+
+        // console.log(window.innerHeight);
+        // console.log(window.innerWidth);
+
+        /* PHƯƠNG THỨC window.open()*/
+
+        // Dùng để mở 1 của sổ mới
+        // Cú pháp: window.open(url, name, options);
+        // url là đường dẫn
+        // name là tên của cửa sổ
+        // option: là 1 chuỗi các thông số được các nhau bởi dấu phẩy, sau đây là các thông số thông dụng
+        // + height: chiều cao của cửa sổ(px)
+        // + width: chiều rộng của cửa sổ (px)
+        // + top: vị trí hiển thị cửa sổ so với lề trên(px)
+        // + left: vị trí hiển thị cửa sổ so với lề dưới (px)
+
+        // VD:
+        // function openTab() {
+        //     window.open("https://www.messenger.com/", "_blank", "width=1200, height=600, top=200, left=0");
+        // }
+
+        /* PHƯƠNG THỨC window.close() */
+        // Để đóng cửa sổ mà ta đã dùng lệnh open() để mở
+        // Cú pháp: Gọi hàm mở cửa sổ
+        
+            // var myWindow = window.open(url, name, option);
+            // // Gọi hàm đóng cửa sổ
+            // myWindow.close();
+        
+        // var tab;
+
+        // function openTab() {
+        //     tab = window.open("https://www.messenger.com/", "OKE", "width=1200, height= 300, top= 100, left= 0");
+        // }
+
+        // function closeTab() {
+        //     tab.close();
+        // }
+
+
+        /* window.location.href*/
+        // Để lấy đường dẫn hiện tại của trang WEB
+        // Cú pháp: window.location.href;
+
+        // console.log(window.location);
+        // console.log(window.location.href); // http://127.0.0.1:5500/Bai_18/1_BOM.html
+
+
+        /* screen.width VÀ screen.height*/
+        // Để lấy chiều rộng và chiều cao màn hình máy tính (không phải của trình duyệt)
+        // console.log(screen.width); 
+        // console.log(window.screen.width);
+        // var screenWidth = window.screen.width;
+        // var screenHeight = window.screen.height;
+    </script>
+
+    <button onclick="reloadTab()">
+        Reload
+    </button>
+
+    <script>
+        /*====== BOM LOCATION ======*/
+        // là 1 đối tượng được dùng để xử lí các vấn đề liên quan đến URL của trang web
+        // Cú pháp: window.location hoặc location
+
+        // PHƯƠNG THỨC reload()
+        // Để load lại trang web
+        // Cú pháp: location.reload();
+
+        // setInterval(() => {
+        //     window.location.reload();
+        // }, 5000);
+
+        // Phương thức setInterval() trong JavaScript được dùng để lập lịch thực thi một hàm hoặc đoạn mã cụ thể nào đó một cách định kỳ sau mỗi khoảng thời gian nhất định, đo bằng mili giây. Khi sử dụng setInterval(), hàm hoặc đoạn mã bạn cung cấp sẽ được thực thi lặp đi lặp lại cho đến khi bạn hủy bỏ lập lịch này, thường là thông qua phương thức clearInterval().
+
+        // CÁC THUỘC TÍNH
+        /*
+        - hash: lấy phần sau dấu # của url
+        - host: lấy hostname và port của url
+        - hostname: lấy hostname
+        - href: lấy URL
+        - origin: trả về protocol, hostname và port của URL
+        - pathname: lấy path name của URL
+        - search: lấy phần query string của URL (sau dấu ?)
+        */
+
+        // console.log(window.location);
+    </script>
+
+    <script>
+        /*====== BOM HISTORY ======*/
+        // Dùng để quản lí lịch sử lướt web
+        // Khi bạn lướt web thì trình duyệt lưu lại lịch sử lướt web của bạn. Dựa vào lịch sử đó, ta có thể xem lại lịch sử lướt web
+        // Cú pháp: window.history hoặc history
+
+        // console.log(window.history);
+
+        /*
+            THUỘC TÍNH:
+            + history.lenth: đếm tổng số trang đã lưu trong history
+            + history.back(): trở lại trang trước
+            + history.forward(): đi tới trang kế tiếp
+            + history.go(number): đi tới 1 trang:
+            > Nếu number âm thì tính từ trang hiện tại trừ đi number
+            > Nếu number dương thì tính từ trang hiện tại cộng cho number 
+        */
+
+    </script>
+
+    <script>
+        /*====== BOM NAVIGATOR ======*/
+        // Được dùng để kiểm tra các thông tin về người dùng như trình duyệt đang sử dụng là gì? Hệ điều hành đang sử dụng là gì? Trình duyệt có bật cookies hay không? Có thể kiểm tra được tên và phiên bản của trình duyệt
+        // Cú pháp: window.navigator hoặc navigator
+
+        // console.log(window.navigator);
+
+        /* THUỘC TÍNH:
+        + navigator.cookieEnabled: Kiểm tra trình duyệt có bật cookies hay không.
+        + navigator.appName: Kiểm tra tên trình duyệt
+        + navigator.appCodeName: Kiểm tra tên mã code của trình duyệt
+        + navigator.appVersion: kiểm tra phiên bản của trình duyệt
+        + navigator.platform: Xem hệ điều hành mà người dùng đang sử dụng
+        + navigator.language: Kiểm tra ngôn ngữ của trình duyệt
+        */
+    </script>
+
+    <script>
+        /* ====== BOM POP UP ======*/
+        /*
+        alert("...");
+        confirm("...")
+        prompt("Nội dung", "Nội dung mặc định")
+        */
+    </script>
+
+    <script>
+        /* ====== BOM TIMING =====*/
+
+        // setTimeout(() => {
+            
+        // }, timeout);
+
+        // Phương thức setTimeout() trong JavaScript được sử dụng để lên lịch thực thi một hàm hoặc đoạn mã sau một khoảng thời gian nhất định, tính bằng mili giây. Khi khoảng thời gian hết, hàm hoặc đoạn mã được chỉ định sẽ được thực thi một lần.
+
+        // setInterval(() => {
+            
+        // }, interval);
+
+        // Phương thức setInterval() trong JavaScript được sử dụng để lập lịch thực thi một hàm hoặc đoạn mã lặp đi lặp lại sau mỗi khoảng thời gian nhất định, đo bằng mili giây. Điều này cho phép bạn chạy một hàm cụ thể lặp đi lặp lại sau mỗi khoảng thời gian đã xác định mà không cần phải gọi lại hàm đó trong bản thân nó.
+
+        //VD
+
+        // function displayMessage() {
+        //     console.log("Hello after 3 seconds!");
+        // }
+
+        // // Lập lịch thực thi hàm displayMessage sau 3000 mili giây (3 giây)
+        // let timeoutId = setTimeout(displayMessage, 3000);
+
+        function sayHello() {
+        console.log("Hello!");
+}
+
+        // Gọi hàm sayHello mỗi 1000 mili giây (1 giây)
+        let intervalId = setInterval(sayHello, 1000);
+
+        // Sau 5 giây, dừng gọi hàm sayHello
+        setTimeout(() => {
+            clearInterval(intervalId);
+        }, 5000);
+
+
+    </script>
+</body>
+</html>
