@@ -1,13 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
+    <h2>Nội dung hiện tại</h2>
+    <h3>
+        <a href="">Link</a>
+        <a href="">Link1</a>
+        <a href="">Link2</a>
+    </h3>
     <script>
-        
+        // LẤY NỘI DUNG TRONG THẺ HTML
+        // Cú pháp:
+
+        // let element = document.querySelector("h2").innerHTML;
+        // console.log(element); // Nội dung hiện tại
+
+        // THAY ĐỔI NỘI DUNG CỦA 1 Element
+        // Cú pháp:
+
+        // document.querySelector("h2").innerHTML = "Nội dung mới";
+        // element = document.querySelector("h2").innerHTML;
+        // console.log(element); // Nội dung mới
+
+        // element = document.querySelector("h3").innerHTML; // Lấy tất cả phần tử bên trong h3
+        // console.log(element); 
+        // <a href="">Link</a>
+        // <a href="">Link1</a>
+        // <a href="">Link2</a>
+
+        // Lấy nội dung của thẻ a đầu tiên trong h3
+        // element = document.querySelector("h3 a").innerHTML; 
+        // console.log(element); // Link
+
+        // element = document.querySelector("h3").textContent; // Lấy nội dung bên trong thẻ h3
+        // console.log(element); 
+        // Link
+        // Link1
+        // Link2
+
+        // Lấy nội dung bên trong thẻ h3(bỏ ngắt dòng)
+        // element = document.querySelector("h3").innerText; 
+        // console.log(element);  // Link Link1 Link2
+    </script>
+
+    <div class="product-item" data-id="1234" categoty="Phone">
+        Ảnh
+        Tiêu Đề
+        Giá
+    </div>
+
+    <div class="product-item" data-id="1235" category="Comp">
+        Ảnh
+        Tiêu Đề
+        Giá
+    </div>
+
+    <script>
+        /*
+            THAY ĐỔI THUỘC TÍNH HTML  
+
+            Để lấy giá trị của  thuộc tính HTML ta dùng cú pháp: 
+
+            document.querySelector("selector").attributeName;
+
+            Hoặc
+
+            document.querySelector("selector").getAttribute("attributeName");
+
+            Để thay đổi giá trị của thuộc tính HTML, ta dùng cú pháp: 
+
+            document.querySelector("selector").attributeName = "Giá trị mới";
+
+            Hoặc 
+
+            document.querySelector("selector").setAttribute("attributeName","Nội dung mới");
+        */
+
+        let productList = document.querySelectorAll(".product-item");
+        console.log(productList); // [div.product-item, div.product-item]
+
+        productList.forEach(element => {
+            console.log(element);
+        });
+        // div.product-item
+        // div.product-item
+
+        let cart = [];
+
+        productList.forEach(element => {
+            let id = element.getAttribute("data-id");
+            cart.push(id);
+        });
+
+        console.log(cart); // ['1234', '1235']
+
+        productList.forEach(element => {
+            element.setAttribute("category","auto"); 
+        });
+
+        productList.forEach(element => {
+            console.log(element.getAttribute("category"));
+        });
+        // auto
+        // auto
     </script>
 </body>
+
 </html>
