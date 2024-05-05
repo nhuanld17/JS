@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .light{
+            background: lightblue;
+        }
+
+        .dark{
+            background: darkblue;
+            color: #ffffff;
+        }
+    </style>
+    <div class="light" id="box">Nội dung thẻ DIV</div>
+    <div>Nội dung div2</div>
+    <div>Nội dung div3</div>
+
+    <ul id="menu">
+        <li>Mục 1</li>
+        <li>Mục 2</li>
+        <li>Mục 3</li>
+    </ul>
+
+    <script>
+        /*====== DOM ELEMENT ======*/
+        // Để truy xuất tới 1 thẻ HTML theo ID ta sử dụng cú pháp sau:
+        // var element = document.getElementById('idName');
+
+        /* 
+            VD: Ta cần truy xuất tới thẻ div ở trên và thêm class dark vào đó để màu nền trở
+            thành darkblue và màu chữ thành màu trắng:
+        */
+
+        // const box = document.getElementById("box");
+        // console.log(box.outerHTML); //<div class="light" id="box">Nội dung thẻ DIV</div>
+
+        // Thêm classname là dark vào thẻ div
+        // box.classList.add("dark");
+        // console.log(box.outerHTML); // <div class="light dark" id="box">Nội dung thẻ DIV</div>
+
+        /*
+            Note: Vì sao lại sử dụng "console.log(box.outerHTML);" thay vì "console.log(box);" trong ví dụ trên ? Vì kết quả trong Console của trình duyệt là động, khi sử dụng console.log() để in ra 1 đối tượng DOM trong hầu hết các trình duyệt hiện đại, bạn đang thực sự in ra 1 tham chiếu đến đối tượng đó, không phải là 1 bản sao tĩnh của nó tại thời điểm gọi console.log(). 
+
+            Như ví dụ trên, sau khi đã thêm 1 class name("dark") vào thẻ div, thì lệnh console.log(box) đầu tiên sẽ in ra giá trị của đối tượng DOM đã được thay đổi. Do đó để in ra giá trị tĩnh của 1 đối tượng DOM tại thời điểm console.log() được gọi, ta có thể sử dụng "console.log(box.outerHTML);" để lấy dạng HTML dạng chuỗi chứ không phải là tham chiếu.
+        */
+
+        /*
+            Nếu có nhiều thẻ HTML trùng giá trị id thì DOM Element chỉ có tác dụng với thẻ HTML đầu tiên có giá trị id đó 
+            ==> Không được đặt trùng giá trị id cho các thẻ HTML 
+        */
+
+        // const menu = document.getElementById("menu");
+        // console.log(menu.outerHTML);
+    </script>
+
+    <script>
+        // SỬ DỤNG getElementByTagName để tìm tên thẻ html
+        // Tên thẻ HTML chính là tên thẻ như p, a, div.. và ta sẽ truy xuất tới nó bằng cú pháp sau:
+
+        // var element = document.getElementsByTagName('tagName');
+        // Kết quả sẽ trả về 1 mảng các Object
+
+        // VD:
+        /*
+            const divElement = document.getElementsByTagName("div");
+            console.log(divElement);
+            // [div#box.light, div, div, box: div#box.light]
+            console.log(divElement[0].outerHTML); // <div class="light" id="box">Nội dung thẻ DIV</div>
+            console.log(divElement[1].outerHTML); // <div>Nội dung div2</div>
+            console.log(divElement[2].outerHTML); // <div>Nội dung div3</div>
+
+            // Thêm class vào thẻ div thứ 2
+            divElement[1].classList.add("light");
+            console.log(divElement[1].outerHTML); // <div class="light">Nội dung div2</div>
+        */
+    </script>
+
+    <p class="inner-desc">Lorem ipsum dolor sit,</p>
+    <p class="inner-desc">Lorem ipsum dolor sit,ádasdasd</p>
+    <p class="inner-desc">Lorem ipsum dolor sit,aaaa</p>
+    <p class="inner-desc">Lorem ipsum dolor sit,ádasd</p>
+
+    <script>
+        /*
+            SỬ DỤNG getElementsByClassName ĐỂ TÌM THEO TÊN CLASS
+            Cú pháp:
+
+            var element = document.getElementsByClassName("className");
+            Kết quả trả về 1 mảng các Object
+        */
+
+        /*
+            var element = document.getElementsByClassName("inner-desc");
+            console.log(element); // HTMLCollection(4) [p.inner-desc, p.inner-desc, p.inner-desc, p.inner-desc]
+            console.log(element[0].outerHTML); // <p class="inner-desc">Lorem ipsum dolor sit,</p>
+            console.log(element[1].outerHTML); // <p class="inner-desc">Lorem ipsum dolor sit,ádasdasd</p>
+            console.log(element[2].outerHTML); // <p class="inner-desc">Lorem ipsum dolor sit,aaaa</p>
+
+            element[0].classList.add("desc-1"); // Thêm class name desc-1 vào phần tử p đầu tiên
+            console.log(element[0].outerHTML); // <p class="inner-desc desc-1">Lorem ipsum dolor sit,</p>
+        */
+    </script>
+
+    <style>
+        .box1 .box2 h2 .link{
+            background-color: yellow;
+        }
+
+        .box1 .box2 h2 .link.active{
+            background-color: orange;
+        }
+    </style>
+
+    <div class="box1">
+        <div class="box2">
+            <h2>
+                <a href="#" class="link">Nội dung thẻ a </a>
+            </h2>
+            <h2>
+                <a href="#" class="link">Nội dung thẻ a </a>
+            </h2>
+        </div>
+    </div>
+
+    <script>
+        /*
+            SỬ DỤNG querySelector để tìm theo CSS selector
+            Cú pháp:
+            
+            var element = document.querySelector("selector"); // Chỉ tìm ra thẻ đầu tiên
+            element.classList.add("class-test");
+        */
+
+        /*
+            const element = document.querySelector(".box1 .box2 h2 .link");
+            console.log(element.outerHTML); // <a href="#" class="link">Nội dung thẻ a </a>
+
+            // Thêm class name là active để đường link có background màu cam
+            element.classList.add("active"); // Chỉ có thẻ a  đầu tiên được áp dụng
+            console.log(element.outerHTML); // <a href="#" class="link active">Nội dung thẻ a </a>
+        */
+
+        /*
+            SỬ DỤNG querySelectorAll ĐỂ LẤY TẤT CẢ CÁC THẺ CÓ CHUNG CSS SELECTOR
+            CÚ PHÁP:
+        */
+
+        /*
+            var element = document.querySelectorAll(".box1 .box2 h2 .link");
+            console.log(element); // [a.link, a.link]
+
+            element.forEach(item => {
+                console.log(item.outerHTML); // <a href="#" class="link">Nội dung thẻ a </a>
+                item.classList.add("active");
+            })
+
+            console.log(element); // [a.link.active, a.link.active]
+        */
+    </script>
+</body>
+</html>
