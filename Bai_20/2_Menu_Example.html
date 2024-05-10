@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .menu{
+            background: orange;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            display: none;
+        }
+
+        .menu.show {
+            display: block;
+        }
+
+        .menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu ul li {
+            padding: 10px;
+            border-bottom:  1px solid #000000;
+        }
+
+        .button{
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .menu .inner-close {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    </style>
+    <div class="menu" id="menu">
+        <button class="inner-close" id="buttonClose">
+            Đóng
+        </button>
+        <ul>
+            <li>Mục 1</li>
+            <li>Mục 2</li>
+            <li>Mục 3</li>
+        </ul>
+    </div>
+
+    <button class="button" id="buttonMenu">
+        Menu
+    </button>
+
+    <script>
+        const buttonMenu = document.querySelector("#buttonMenu");
+        const menu = document.querySelector("#menu");
+
+        buttonMenu.onclick = function(){
+            menu.classList.add("show");
+        };
+
+        const buttonClose = document.querySelector("#buttonClose");
+        buttonClose.onclick = function() {
+            menu.classList.remove("show");
+        };
+    </script>
+</body>
+</html>

@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
         /*
@@ -28,7 +30,88 @@
             + onchange: Kích hoạt khi giá trị thay đổi khác đi so với giá trị trước đó
         */
 
+        // // VD onload:
+        // const menu = document.querySelector("#menu");
+        // console.log(menu); // null
+
+        // // vì câu lệnh được thực thi trước khi phần tử <ul> được tải lên, nên in ra null, do đó, muốn lấy được phần tử <ul> thì phải sử dụng onload, hàm onload sẽ đợi cho các phần tử trong trang web load xong thì mới chạy chương trình bên trong nó
+        /*
+        window.onload = function(){
+            const menu = document.querySelector("#menu");
+            console.log(menu.outerHTML);
+        };
+        */
+        /*
+        output: 
+        <ul id="menu">
+        <li>Mục 1</li>
+        <li>Mục 2</li>
+        <li>Mục 3</li>
+        </ul>
+        */
 
     </script>
+
+    <ul id="menu">
+        <li>Mục 1</li>
+        <li>Mục 2</li>
+        <li>Mục 3</li>
+    </ul>
+
+    <input type="text" placeholder="Nhập họ tên" id="input-name">
+
+    <script>
+        /*======== ONBLUR ===========*/
+        // Kích hoạt khi một phần tử mất trọng tâm (không được focus vào nữa)
+
+        // const inputname = document.querySelector("#input-name");
+        // inputname.onblur = function(){
+        //     inputname.value = inputname.value.toUpperCase();
+        //     console.log(inputname.value.toUpperCase());
+        // };
+        // console.log(inputname); //<input type="text" placeholder="Nhập họ tên" id="input-name">
+    </script>
+
+    <script>
+        /*====== onfocus ======*/
+        // Kích hoạt khi một phần tử hiển thị đúng trọng tâm (được focus vào)
+
+        // const inputname = document.querySelector("#input-name");
+        // inputname.onfocus = () => {
+        //     inputname.classList.add("focus");
+        //     console.log(inputname.outerHTML);
+        //     // <input type="text" placeholder="Nhập họ tên" id="input-name" class="focus">
+        // };
+    </script>
+
+    <script>
+        /*====== onkeydown ======*/
+        // const inputname = document.querySelector("#input-name");
+        // inputname.onkeydown = function(){
+        //     console.log("OKE");
+        // };
+
+        /*====== onkeyup ======*/
+        // inputname.onkeyup = function(){
+        //     console.log("OKE");
+        // };
+    </script>
+
+    <select name="" id="option">
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+    </select>
+
+    <script>
+        /*====== onchange ======*/
+        const option = document.querySelector("#option");
+        option.onchange = function() {
+            let currentOption = option.value;
+            console.log(currentOption);
+        };
+    </script>
+
 </body>
+
 </html>
