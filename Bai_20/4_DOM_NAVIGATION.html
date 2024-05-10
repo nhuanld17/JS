@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="parent">
+        <div class="child-1" id="child-1">
+            <div class="box">Box 1</div>
+            <div class="box">Box 2</div>
+            <div class="box">Box 3</div>
+        </div>
+        <div class="child-2">
+            Child 2
+        </div>
+        <div class="child-3">
+            Child 3
+        </div>
+    </div>
+    <script>
+        /*====== DOM NAVIGATION ======*/
+        /*
+            - Dùng để quản lí, thao tác với các thẻ HTML, thể hiện mối quan hệ cha-con của các thẻ  HTML.
+            - Các thuộc tính: 
+            + parentNode : dùng để truy cập nút cha của nút được chỉ định trong cây DOM 
+            + childNodes : truy cập tất cả các node con của một phần tử nhất định. Node con có thể là một văn bản, chú thích
+            + firstElementChild: trả về phần tử là node con đầu tiên của node cha. 
+            + lastElemetChild:  trả về phần tử là node con cuối cùng của phần tử cha.
+            + nextElementSibling: trả về phần tử là node kế tiếp. 
+            + previousElementSibling: trả về phần tử là node trước đó
+            + nodeName: trả về tên 1 node
+        */
+
+        //VD:
+
+        const childOne = document.querySelector("#child-1");
+        // console.log(childOne);
+        // console.log(childOne.parentNode);// In ra nút cha
+        // console.log(childOne.childNodes);// Lấy ra các nút con
+        // [text, div.box, text, div.box, text, div.box, text]
+        console.log(childOne.firstElementChild.outerHTML); // <div class="box">Box 1</div>
+        console.log(childOne.lastElementChild.outerHTML); // <div class="box">Box 3</div>
+
+        console.log(childOne.nextElementSibling.outerHTML);
+        // <div class="child-2">
+        //     Child 2
+        // </div>
+
+        console.log(childOne.nodeName); // DIV
+
+    </script>
+</body>
+</html>
