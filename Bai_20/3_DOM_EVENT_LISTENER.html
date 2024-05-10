@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="button">Button</button>
+
+    <script>
+        /*
+        - DOM Event Listener giống DOM event nhưng khác ở chỗ:
+        + Một element có thể gọi nhiều sự kiện
+        + Có thể hủy bỏ lắng nghe sự kiện bất kì (Dom events chỉ lắng nghe được nhưng không hủy bỏ lắng nghe được)
+        - Cú pháp: 
+        element.addEventListener("eventname",function(e){
+            // Code
+        });
+
+        - element là phần tử muốn bắt sự kiện
+        - eventname : tên sự kiện (bỏ on);
+        */
+
+        function A() {
+            console.log("A");
+        }
+
+        function B() {
+            console.log("B");
+        }
+
+        const button = document.querySelector("#button");
+        // button.onclick = function(){
+        //     A();
+        //     B();
+        // };
+
+        button.addEventListener("click",A);
+
+        button.addEventListener("click",B);
+
+        // Output: Khi chọn vào nút button, thì cả hai hàm A() và B() đều được gọi, khác với onclick khi chỉ chạy hàm B();
+
+        // Gỡ bỏ sự kiện click chạy hàm B sau 5 giây
+        setTimeout(() => {
+            button.removeEventListener("click",B);
+        }, 5000);
+    </script>
+</body>
+</html>
