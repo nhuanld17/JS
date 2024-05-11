@@ -42,7 +42,6 @@
         // let result = sum(10, 20, 30, 40);
         // console.log(result);
 
-
         // function funcA(){
         //     console.log("Hàm A");
 
@@ -83,7 +82,6 @@
         //     //Code
         // }
 
-
         // var Sum = function(){
         //     let tong = 0;
         //     for (const item of arguments) {
@@ -93,6 +91,21 @@
         // }
         // let result = Sum(20, 30, 40);
         // console.log(result); // 90
+
+        // Thêm ví dụ nữa
+
+        // var Sum = function () {
+        //     let result = 0;
+        //     for (const argument of arguments) {
+        //         console.log(argument);
+        //         result += argument;
+        //     }
+
+        //     return result;
+        // }
+
+        // let tong = Sum(20,30,40);
+        // console.log(tong); // 90
     </script>
 
     <script>
@@ -127,6 +140,19 @@
         // let result = caculateSum(10, 20, 30, 40);
         // console.log(result); // 100
 
+        // const calculateSum = (...args) => {
+        //     let tong = 0;
+        //     for (const item of args) {
+        //         console.log(item);
+        //         tong += item;
+        //     }
+
+        //     return tong;
+        // }
+
+        // let result = calculateSum(10, 20, 30, 40);
+        // console.log(result);
+
         // VD1 Tính tổng các số chẵn của mảng
         // var array = [1,2,3,4,5,6,7,8,9,10];
 
@@ -142,6 +168,18 @@
 
         // let result = SumEvenNumber(array);
         // console.log(result); // 30
+        // var array = [1,2,3,4,5,6,7,8,9,10];
+        // const SumEvenNumber = (...args) => {
+        //     let tong = 0;
+        //     for (const argument of args) {
+        //         console.log(argument);
+        //         tong += argument;
+        //     }
+        //     return tong;
+        // }
+
+        // const result = SumEvenNumber(...array);
+        // console.log(result);
 
         // VD 2; Viết chương trình cho người dùng nhập vào số n > 0, sau đó dựa vào n
         // tính giá trị của biểu thức S = 1/n + 2/n + .. + n/n.
@@ -165,6 +203,19 @@
         // console.log(n);
         // let result = caculateS(n);
         // console.log(result);
+
+        // const calculateS = (n) => {
+        //     let tong = 0;
+        //     for (let index = 1; index <= n; index++) {
+        //         tong += 1/index;
+        //     }
+
+        //     return tong;
+        // }
+
+        // const result = calculateS(10);
+        // console.log(result);
+
     </script>
 
     <script>

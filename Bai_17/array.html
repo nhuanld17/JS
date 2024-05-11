@@ -21,13 +21,18 @@
         // var a = [1,2,3,4,5,6,7,8,9,10];
         // let tong = 0;
 
+        // a.forEach((item, index, a) => {
+        //     tong += item;
+        //     a[index] = 20;
+        // });
+
         // a.forEach(function(item, index, a){
         //     tong += item;
         //     a[index] = 20;
         // });
 
         // console.log(tong); //55
-        // console.log(a);
+        // console.log(a); // [20, 20, 20, 20, 20, 20, 20, 20, 20, 20]
 
 
         // every(): Kiểm tra all phần tử của một mảng phải thỏa mãn
@@ -57,6 +62,12 @@
         //         return item.diem >= 8;
         //     }
         // );
+
+        // console.log(hocSinhGioi);
+
+        // const hocSinhGioi = monHoc.every((item, index, monHoc) => {
+        //     return item.diem >= 8;
+        // });
 
         // console.log(hocSinhGioi);
 
@@ -101,6 +112,14 @@
         // }else{
         //     console.log("Không ở lại lớp");
         // }
+
+        // const  luuBan = monHoc.some(
+        //     (item, index, monHoc) => {
+        //         return item.diem <= 4;
+        //     }
+        // );
+
+        // console.log(luuBan);
     </script>
 
     <script>
@@ -136,6 +155,14 @@
         // const xemDiemTin = monHoc.find(function(item){
         //     return item.ten == "Tin";
         // });
+
+        // console.log(xemDiemTin);
+
+        // const xemDiemTin = monHoc.find(
+        //     (item, index, monHoc) => {
+        //         return item.ten == "Tin";
+        //     }
+        // );
 
         // console.log(xemDiemTin);
 
@@ -178,9 +205,13 @@
 
         // console.log(xemDiemTIn);
 
-        // xemDiemTIn.forEach(function(item){
-        //     console.log(item);
-        // });
+        // const xemDiemTin = monHoc.filter(
+        //     (item, index, monHoc) => {
+        //         return item.ten == "Tin";
+        //     }
+        // );
+
+        // console.log(xemDiemTin);
 
     </script>
 
@@ -189,7 +220,7 @@
         // là 1 mảng mới, với số lượng phần tử bằng với mảng cũ, nhưng giá trị của
         // các phần tử thì được quyết định bởi lệnh return của hàm map.
 
-        // var a = [1,2,3,4,5,6,7,8,9,10];
+        var a = [1,2,3,4,5,6,7,8,9,10];
 
         // let result = a.map(item => {
         //     return item;
@@ -197,24 +228,32 @@
 
         // console.log(result);
 
-        // const monHoc = [
-        //     {
-        //         ten: "Toán",
-        //         diem: 8.6
-        //     },
-        //     {
-        //         ten: "Lí",
-        //         diem: 9,
-        //     },
-        //     {
-        //         ten: "Hóa",
-        //         diem: 4,
-        //     },
-        //     {
-        //         ten: "Tin",
-        //         diem: 5,
-        //     },
-        // ];
+        // let result = a.map(
+        //     (item, index, a) => {
+        //         return item*2;
+        //     }
+        // );
+
+        // console.log(result);
+
+        const monHoc = [
+            {
+                ten: "Toán",
+                diem: 8.6
+            },
+            {
+                ten: "Lí",
+                diem: 9,
+            },
+            {
+                ten: "Hóa",
+                diem: 4,
+            },
+            {
+                ten: "Tin",
+                diem: 5,
+            },
+        ];
 
         // const DanhGia = monHoc.map(item => {
         //     let hocLuc = "";
@@ -232,17 +271,44 @@
 
         // console.log(DanhGia);
 
+        // const danhgia = monHoc.map(
+        //     (item, index, monHoc) => {
+        //         let hocluc = "";
+
+        //         if (item.diem > 8) {
+        //             hocluc ="Gioi";
+        //         } else {
+        //             hocluc = "Khong gioi";
+        //         }
+
+        //         return {
+        //             ten: item.ten,
+        //             hocluc: hocluc
+        //         }
+        //     }
+        // );
+
+        // console.log(danhgia);
     </script>
 
     <script>
         // reduce(): duyệt qua từng phần tử trong mảng và tính toán các phần tử đó
         // sau đó trả về 1 giá trị cuối cùng
         // Cú pháp:
-        // array.reduce(function(total, currentValue, index, array){
+        // array.reduce(function(accumulator, currentValue, currentIndex, array ){
         //     // CODE
         // }, intialValue);
 
-        // var a = [1,2,3,4,5,6,7,8,9,10];
+        /*
+            accumulator: Giá trị tích lũy được trả về từ lần gọi hàm trước đó.
+            currentValue: Giá trị của phần tử hiện tại trong mảng.
+            currentIndex (tùy chọn): Chỉ số của phần tử hiện tại trong mảng.
+            array (tùy chọn): Mảng mà reduce được áp dụng.
+            initialValue (tùy chọn): Giá trị ban đầu cho accumulator. Nếu không cung cấp, accumulator sẽ lấy giá trị của phần tử đầu tiên trong mảng và currentValue sẽ bắt đầu từ phần tử thứ hai.
+        */
+
+
+        var a = [1,2,3,4,5,6,7,8,9,10];
 
         // let sum = a.reduce((total, item) => {
         //     return total + item;
