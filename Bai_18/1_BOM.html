@@ -226,7 +226,25 @@
         setTimeout(() => {
             clearInterval(intervalId);
         }, 5000);
+        /*
+        Đoạn code mà bạn đã cung cấp sử dụng hai hàm JavaScript là `setInterval` và `setTimeout` để lên lịch gọi một hàm (`sayHello`) theo một khoảng thời gian nhất định và sau đó dừng việc gọi hàm đó sau một khoảng thời gian khác. Dưới đây là phân tích chi tiết của từng phần trong đoạn code:
 
+        ### Hàm `sayHello`
+        - **`sayHello`** là một hàm được định nghĩa để in ra dòng chữ `"Hello!"` mỗi khi nó được gọi.
+
+        ### Sử dụng `setInterval`
+        - **`setInterval`** là một hàm JavaScript dùng để lên lịch gọi một hàm khác lặp đi lặp lại sau mỗi khoảng thời gian nhất định, được đo bằng milisecond (mili giây).
+        - Trong trường hợp này, `setInterval` được sử dụng để gọi hàm `sayHello` mỗi 1000 mili giây, tức là mỗi giây. Hàm `sayHello` sẽ được gọi liên tục mỗi giây cho đến khi nào `setInterval` bị dừng lại.
+        - **`intervalId`** là một biến được sử dụng để lưu giữ ID của hành động lặp lại này, giúp có thể tham chiếu và dừng lại hành động đó sau này.
+
+        ### Sử dụng `setTimeout`
+        - **`setTimeout`** là một hàm khác trong JavaScript, được sử dụng để thực hiện một hành động sau một khoảng thời gian xác định (cũng tính bằng milisecond). 
+        - Trong đoạn code này, `setTimeout` được thiết lập để thực thi sau 5000 mili giây, tức là 5 giây. Hành động trong trường hợp này là gọi một hàm ẩn danh (anonymous function), mà nội dung của nó là gọi **`clearInterval`**.
+        - **`clearInterval`** là hàm được sử dụng để dừng một hành động lặp lại đã được thiết lập bởi `setInterval`. Bằng cách truyền `intervalId` (ID của hành động lặp lại mà `setInterval` tạo ra) vào `clearInterval`, đoạn code dừng việc gọi hàm `sayHello` sau khi 5 giây đã trôi qua.
+
+        ### Kết quả
+        - Kết quả là hàm `sayHello` sẽ được gọi mỗi giây một lần, và sau đúng 5 giây, nó sẽ ngừng được gọi. Nghĩa là bạn sẽ thấy dòng chữ `"Hello!"` được in ra tổng cộng 5 lần.
+        */
 
     </script>
 </body>
