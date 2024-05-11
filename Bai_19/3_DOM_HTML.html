@@ -21,6 +21,9 @@
         // let element = document.querySelector("h2").innerHTML;
         // console.log(element); // Nội dung hiện tại
 
+        let element = document.querySelector("h2").innerHTML;
+        console.log(element);
+
         // THAY ĐỔI NỘI DUNG CỦA 1 Element
         // Cú pháp:
 
@@ -28,11 +31,18 @@
         // element = document.querySelector("h2").innerHTML;
         // console.log(element); // Nội dung mới
 
+        document.querySelector("h2").innerHTML = "Nội dung mới";
+        element = document.querySelector("h2").innerHTML;
+        console.log(element);
+
         // element = document.querySelector("h3").innerHTML; // Lấy tất cả phần tử bên trong h3
         // console.log(element); 
         // <a href="">Link</a>
         // <a href="">Link1</a>
         // <a href="">Link2</a>
+
+        element = document.querySelector("h3").innerHTML;
+        console.log(element);
 
         // Lấy nội dung của thẻ a đầu tiên trong h3
         // element = document.querySelector("h3 a").innerHTML; 
@@ -43,6 +53,9 @@
         // Link
         // Link1
         // Link2
+
+        element = document.querySelector("h3").textContent;
+        console.log(element);
 
         // Lấy nội dung bên trong thẻ h3(bỏ ngắt dòng)
         // element = document.querySelector("h3").innerText; 
@@ -65,7 +78,7 @@
         /*
             THAY ĐỔI THUỘC TÍNH HTML  
 
-            Để lấy giá trị của  thuộc tính HTML ta dùng cú pháp: 
+            Để lấy giá trị của thuộc tính HTML ta dùng cú pháp: 
 
             document.querySelector("selector").attributeName;
 

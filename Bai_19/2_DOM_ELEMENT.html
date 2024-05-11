@@ -39,9 +39,13 @@
         // const box = document.getElementById("box");
         // console.log(box.outerHTML); //<div class="light" id="box">Nội dung thẻ DIV</div>
 
+        const box = document.getElementById("box");
+
         // Thêm classname là dark vào thẻ div
         // box.classList.add("dark");
         // console.log(box.outerHTML); // <div class="light dark" id="box">Nội dung thẻ DIV</div>
+
+        box.classList.add("dark");
 
         /*
             Note: Vì sao lại sử dụng "console.log(box.outerHTML);" thay vì "console.log(box);" trong ví dụ trên ? Vì kết quả trong Console của trình duyệt là động, khi sử dụng console.log() để in ra 1 đối tượng DOM trong hầu hết các trình duyệt hiện đại, bạn đang thực sự in ra 1 tham chiếu đến đối tượng đó, không phải là 1 bản sao tĩnh của nó tại thời điểm gọi console.log(). 
@@ -144,6 +148,8 @@
             element.classList.add("active"); // Chỉ có thẻ a  đầu tiên được áp dụng
             console.log(element.outerHTML); // <a href="#" class="link active">Nội dung thẻ a </a>
         */
+        // const element = document.querySelector(".box1 .box2 h2 .link");
+        // console.log(element.outerHTML);
 
         /*
             SỬ DỤNG querySelectorAll ĐỂ LẤY TẤT CẢ CÁC THẺ CÓ CHUNG CSS SELECTOR
