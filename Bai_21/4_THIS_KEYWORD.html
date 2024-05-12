@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        - Từ khóa this sẽ trỏ về đối tượng mà nó đang thuộc về
+        - Trong javascript, bạn có thể đặt this ngay cấp ngoài của chương trình, vì đối tượng cao nhất chính là đối tượng Windows, nên kết quả là từ khóa this sẽ trỏ đến đối tượng windows
+     -->
+
+    <script>
+        
+        console.log(this); 
+        // Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+        console.log(this.location.href); // http://127.0.0.1:5500/Bai_21/4_THIS_KEYWORD.html
+        console.log(window.location.href); // http://127.0.0.1:5500/Bai_21/4_THIS_KEYWORD.html
+
+    </script>
+
+    <!-- 
+        THIS trong function
+        TH1: Nếu không bật chế độ strict mode thì javascript sẽ hiểu this là 1 biến toàn cục, và cấp cao nhất chính là đối tuownfg windows
+        TH2: Nếu bật chế độ strict mode thì từ khóa this trong hàm là một biến chưa được định nghĩa, nên giá trị của nó là undefined
+        - Arrow function không tồn tại đối tượng this
+        - Khi bạn sử dụng this trong Arrow function thì nó sẽ lấy đối tượng global window
+     -->
+
+    <script>
+        // function test() {
+        //     console.log(this);
+        // }
+        // test(); // Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+
+        "use strict";
+        function test2() {
+            console.log(this);
+        }
+
+        test2(); // undefined
+    </script>
+
+    <!-- 
+        This trong các sự kiện của javascript
+        - Khi gán hành động cho các sự kiện javascript thì this chính là đối tượng html đang được gán sự kiện đó.(this sẽ trỏ về đối tượng đó trước dấu chấm)
+     -->
+
+    <button id="button">Button</button>
+     <ul id="menu">
+        <li>Muc 1</li>
+        <li>Muc 2</li>
+        <li>Muc 3</li>
+     </ul>
+    <script>
+        // const button = document.querySelector("#button");
+        // button.addEventListener("click", function() {
+        //     console.log(this); // <button id="button">Button</button>
+        // });
+
+        // const listItem = document.querySelectorAll("#menu li");
+        // console.log(listItem);
+
+        // [...listItem].forEach(element => {
+        //     element.addEventListener("click", function(){
+        //         console.log(this); // tương đương console.log(element);
+        //     });
+        // });
+    </script>
+
+    <script>
+        /*====== This trong object ====*/
+        let info = {
+            fullname : "Lee Dinh Nhuan",
+            age : 18,
+            email : "nhuan@gmail.com",
+            getFullName: function() {
+
+                console.log(this.fullname); // tương đương console.log(info.fullname);
+            },
+            cccd : {
+                fullName : "Lê Đình Nhuận",
+                address: "Số 123, huế",
+                getInfoCCCD: function(){
+                    console.log(this.fullName);
+                }
+            }
+        }
+
+        info.getFullName(); // Lee Dinh Nhuan
+        info.cccd.getInfoCCCD(); // Lê Đình Nhuận
+    </script>
+</body>
+</html>
