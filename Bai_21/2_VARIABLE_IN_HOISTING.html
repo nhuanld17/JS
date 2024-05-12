@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        - Hoisting nghĩa là có thể sử dụng 1 biến xong sau đó mới khai báo biến đó
+        - Javascript sẽ di chuyển toàn bộ các khai báo biến lên đầu chương trình. Vì vậy, những dòng code có sử dụng biến mà chưa khai báo sẽ không bị lỗi.
+        - Sử dụng var: Nếu biến chưa gán giá trị thì sẽ trả về undefined
+        - Sử dụng let và const: Nếu biến chưa gián trị thì sẽ xuất hiện thông báo lỗi "is not defined". Lỗi này muốn nói rằng biến đó chưa được định nghĩa
+     -->
+
+    <script>
+        // console.log(a); //undefined
+        // var a = 10;
+    </script>
+
+    <script>
+        // console.log(a);// Cannot access 'a' before initialization
+        // let a = 10; 
+    </script>
+</body>
+</html>
