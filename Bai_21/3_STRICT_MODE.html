@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        Strict mode là chế độ code nghiệm ngặt, bắt buộc lập trình viên phải tuân thủ theo quy tắc mà javascript đưa ra. Các lỗi cơ bản thường gặp như khai báo trùng tên biến và trùng tên hàm, sử dụng biến mà chưa được định nghĩa
+        Để sử dụng strict mode ta khai báo "use strict"; ở trước vị trí mà ta muốn sử dụng
+     -->
+
+    <script>
+        "use strict";
+        a = 10;
+        console.log(a);
+    </script>
+
+    <script>
+        var b = 20;
+        function A() {
+            "use strict";
+            a = 10; // a is not defined
+            console.log(a);
+            console.log(b);
+        }
+    </script>
+</body>
+</html>
