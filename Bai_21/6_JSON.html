@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+        - JSON là viết tắt của JavaScript Object Notation
+        - Là một định dạng dữ liệu được lưu dưới dạng chuỗi
+        - Chỉ cho phép các kiểu dữ liệu cơ bản: number, string, boolean, array, object, null.
+        - Không cho phép: function, date, undefined.
+        - Trường hợp giá trị của JSON là một Object thì:
+        + Mỗi thông tin của dữ liệu sẽ có 2 phần là key và value.
+        + key: nên đặt giống tên biến trong JavaScript.
+        + key: bắt buộc phải đặt dấu trong dấu nháy kép, nếu đặt nó trong dấu nháy đơn thì đây không phải là một chuỗi
+        JSON đúng chuẩn.
+        + Nếu có nhiều dữ liệu(nhiều cặp key => value) thì ta dùng dấu phẩy(,) để ngắn cách
+        + Không cho dấu phẩy cuối cùng
+     -->
+
+    <script>
+      // let infoUser = {
+      //     fullName: "Lê Đình Nhuận",
+      //     email: "nhuanld.23it@vkuud.vn",
+      //     age: 18
+      // };
+
+      // // VD1: JSON có giá trị là Object
+      // let infoUserJSON = `
+      // {
+      //     "fullName": "Lê Đình Nhuận",
+      //     "email": "nhuanld.23it@vkuud.vn",
+      //     "age": 18
+      // }
+      // `;
+      // console.log(infoUserJSON);
+      // // Chuyển từ dạng JSON sang dạng object của javascript
+      // let infoUserJSONtoJS = JSON.parse(infoUserJSON);
+      // console.log(infoUserJSONtoJS);
+      // console.log(infoUserJSONtoJS.fullName);
+      // console.log(infoUserJSONtoJS.email);
+
+      // // Chuyển từ dạng Object của JS sang JSON
+      // let infoUserJStoJSON = JSON.stringify(infoUser);
+      // console.log(infoUserJStoJSON);
+    </script>
+
+    <!-- VD2: JSON CÓ DẠNG LÀ NUMBER -->
+    <script>
+      // let jsonNumber = `5`; // Chuỗi JSON
+      // console.log(jsonNumber);
+      // console.log(JSON.parse(jsonNumber)); // Phân tích chuỗi JSON thành 1 số
+    </script>
+
+    <!-- VD3: JSON CÓ GIÁ TRỊ LÀ STRING -->
+    <script>
+      // let jsonString = `"Hello world"`; // Chuỗi JSON
+      // console.log(jsonString); //"Hello world"
+      // // Phân tích chuỗi JSON và chuyển đổi nó thành giá trị JavaScript tương ứng
+      // console.log(JSON.parse(jsonString)); //Hello world
+    </script>
+
+    <script>
+      // // VD4: JSON CÓ GIÁ TRỊ LÀ BOOLEAN
+      // let jsonBoolean = `true`;
+      // console.log(jsonBoolean);
+      // // Phân tích và chuyển đổi jsonBoolean thành giá trị Boolean
+      // console.log(JSON.parse(jsonBoolean));
+    </script>
+
+    <div id="listUsers"></div>
+
+    <script>
+      // VD4: JSON CÓ GIÁ TRỊ LÀ ARRAY
+      // Chuỗi JSON định dạng mảng đối tượng
+    //   let jsonArray = `
+    //     [
+    //         {
+    //             "id": 1,
+    //             "name": "Le Van A",
+    //             "email": "abc@gmail.con"
+    //         },
+    //         {
+    //             "id": 2,
+    //             "name": "Le Van B",
+    //             "email": "abcd@gmail.con"
+    //         },
+    //         {
+    //             "id": 3,
+    //             "name": "Le Van C",
+    //             "email": "abcde@gmail.con"
+    //         }
+    //     ]
+    //     `;
+    //   console.log(jsonArray); // In chuỗi JSON dạng mảng ra console
+    //   // Phân tích và chuyển đổi jsonArray thành mảng đối tượng JavaScript và in ra console
+    //   console.log(JSON.parse(jsonArray));
+
+    //   let listUser = JSON.parse(jsonArray);
+
+    //   // In ra từng đối tượng trong mảng đổi tượng
+    //   listUser.forEach((element) => {
+    //     console.log(element);
+    //   });
+
+    //   let html = "";
+    //   listUser.forEach((item) => {
+    //     html += `
+    //         <div class="user-item">
+    //             <div class="inner-name">${item.name}</div>
+    //             <div class="inner-email">${item.email}</div>
+    //         </div>
+    //     `;
+    //   });
+    //   const divUserList = document.querySelector("#listUsers");
+    //   divUserList.innerHTML = html;
+    //   console.log(html);
+    </script>
+
+    <script>
+        // JSON CÓ GIÁ TRỊ LÀ NULL
+        let jsonNull = `null`;
+        console.log(jsonNull);
+        console.log(JSON.parse(jsonNull));
+    </script>
+  </body>
+</html>
