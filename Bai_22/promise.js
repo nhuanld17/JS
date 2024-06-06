@@ -155,4 +155,32 @@
         });
  */
 
+/* 
+    // VÍ DỤ KHI CÓ 1 PROMISE BỊ TỪ CHỐI
+    const promise1 = new Promise((resolve, reject) =>{
+        setTimeout(() => {
+            resolve("Result 1");
+        }, 1000);
+    });
+
+    const promise2 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            reject("Error in promise 2");
+        }, 2000);
+    }); 
+
+    const promise3 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Result 3");
+        }, 3000);
+    });
+
+    Promise.all([promise1, promise2, promise3])
+        .then((result) => {
+            console.log(result); // Sẽ không được gọi trong trường hợp này
+        })
+        .catch((error) => {
+            console.error(error); // In ra: "Error in promise2"
+        })
+ */
     
