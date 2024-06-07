@@ -89,7 +89,7 @@
             console.log(value);
         });
     console.log(myPromise); // Promise { <pending> }
-    // Sau 2 giây: Promise {<pending>}
+    // Sau 2 giây: Operation was successful
  */
 
 /* 
