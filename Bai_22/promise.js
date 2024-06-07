@@ -39,15 +39,15 @@
 
     promise
         .then((success) =>{
-            console.log(success + 10);// Chạy thành công thì vào hàm này, success chính là biến a
+            console.log(success + 10);// Chạy thành công thì vào hàm này
             return success + 10;
         })
         .then((success2) =>{
-            console.log(success2 + 20);// Chạy thành công thì vào hàm này, success2 chính là biến a
+            console.log(success2 + 20);// Chạy thành công thì vào hàm này
             return success2 + 20;
         })
         .then((success3) =>{
-            console.log(success3 + 30);// Chạy thành công thì vào hàm này, success3 chính là biến a
+            console.log(success3 + 30);// Chạy thành công thì vào hàm này
         })
         .catch((error) =>{
             console.log("Lỗi: "+error);
