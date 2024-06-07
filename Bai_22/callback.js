@@ -25,6 +25,7 @@ import {KiemTraChanLe} from "./helpers/KiemTraChanLe.js";
 //     console.log("Hàm 2");
 // }
 
+// Truyền hàm ham2() vào hàm ham1(), khi đó hàm callback của hàm 1 là ham2() 
 // ham1(ham2);
 
 // Ví dụ 3: 
