@@ -49,7 +49,7 @@ await tạm dừng việc thực thi của hàm async cho đến khi Promise đ�
         return result;
     }
 
-    fetchAPI("https://dummyjson.com/products/category-list")
+    fetchAPI("http://localhost:3000/category")
         .then((data) => {
             let htmls = "";
             data.forEach(element => {
@@ -61,7 +61,7 @@ await tạm dừng việc thực thi của hàm async cho đến khi Promise đ�
             document.querySelector("#category").innerHTML = htmls;
         });
     
-    fetchAPI("https://dummyjson.com/products")
+    fetchAPI("http://localhost:3000/products")
         .then((data) => {
             let htmls = "";
             data.products.forEach(element => {
