@@ -39,7 +39,7 @@ const fetchAPI = (url) => {
         let html = "";
         data.forEach(element => {
             html += `
-            <div class="category-item">${element}</div>
+
             `;
         });
         console.log(html); // In dữ liệu
