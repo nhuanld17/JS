@@ -49,7 +49,7 @@ await tạm dừng việc thực thi của hàm async cho đến khi Promise đ�
         return result;
     }
 
-    fetchAPI("http://localhost:3000/category")
+    fetchAPI("http://localhost:3000/categories")
         .then((data) => {
             let htmls = "";
             data.forEach(element => {
@@ -64,7 +64,7 @@ await tạm dừng việc thực thi của hàm async cho đến khi Promise đ�
     fetchAPI("http://localhost:3000/products")
         .then((data) => {
             let htmls = "";
-            data.products.forEach(element => {
+            data.forEach(element => {
                 htmls += `
                     <div class="product-item">
                         <img src="${element.thumbnail}" alt="${element.title}">
