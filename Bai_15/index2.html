@@ -125,60 +125,85 @@
 
         // LÀM VIỆC VỚI CHUỖI
         // var a = "Le Dinh Nhuan";
+
+        // In ra độ dài của chuỗi
         // console.log(a.length);
 
-        // indexOf(): Tìm vị trí đầu tiên của 1 chuỗi nằm trong 1 chuỗi
-        // Nếu không tìm thấy -> return -1
-        // Có phân biệt chữ hoa, chữ thường
-        // Cú pháp: string.indexOf(searchValue, start);
-        // searchValue = giá trị tìm kiếm(bắt buộc)
-        // start: Vị trí bắt đầu tìm kiếm(từ trái qua phải), mặc định bắt đầu từ 0
+        /*
+        indexOf(): Tìm vị trí đầu tiên của 1 chuỗi nằm trong 1 chuỗi. Nếu không tìm thấy
+        thì trả về -1, có phân biệt chữ hoa chữ thường
+        Cú pháp: string.indexOf(searchValue, start);
+                                searchValue: giá trị tìm kiếm (bắt buộc)
+                                start: vị trí bắt đầu tìm kiếm (từ trái qua phải, mặc định 0)
+        */
 
-        // var myString = "Hello , I am Messi, I am GOAT";
-        // console.log(myString.indexOf("Messi"));
-        // console.log(myString.indexOf("GOAT"));
-        // console.log(myString.indexOf("Ronaldo"));
+        /* 
+        var str = "Hello wold, Messi is GOAT";
+        console.log(str.indexOf("Messi")); // 12
+        console.log(str.indexOf("GOAT")); // 21
+        console.log(str.indexOf("Ronaldo")); // -1
+        */
 
-        // lastIndexOf(): Tìm vị trí cuối cùng của 1 chuỗi nằm trong 1 chuỗi
-        // Nếu không tìm thấy --> return -1;
-        // Có phân biệt chữ hoa, chữ thường
-        // Cú pháp: string.lastIndexOf(searchvalue, start);
-        // searchValue: Chuỗi con cần tìm kiếm.
-        // start(tùy chọn): Vị trí trong chuỗi từ đó bắt đầu tìm kiếm ngược lại.
-        // Nếu không được cung cấp, tìm kiếm bắt đầu từ cuối chuỗi.
-        //( mặc định bắt đầu là 0)
+        /*
+        lastIndexOf(): Tìm bị trí cuối cùng của 1 chuỗi nằm trong 1 chuỗi, nếu không tìm thấy
+        thì trả về -1.
+        Có phân biệt chữ hoa, chữ thường
+        Cú pháp: string.lastIndexOf(searchValue, start);
+                                    searchValue: Chuỗi con cần tìm kiếm
+                                    start: vị trí bắt đầu tìm kiếm ngược lại
+        */
 
-        // slice(): Dùng để cắt 1 chuỗi và trả về 1 chuỗi mới
-        // Chuỗi ban đầu không thay đổi
-        // Cú pháp string.slice(start, end);
-        // start: vị trí bắt đầu cắt (bắt buộc)
-        // end: Vị trí kết thúc cắt(không bắt buộc)
+        /* 
+        let text = "Hello, world! Welcome to the world of JavaScript.";
 
-        // var myString = "Xin chào! Tôi tên Nam. Tôi thần tượng Messi";
-        // console.log(myString.slice(10, 21));// Cắt chuỗi từ vị trí 10 đến 20
-        // console.log(myString.slice(0));// Lấy toàn bộ chuỗi
-        // console.log(myString.slice(0, 1));// Lấy kí tự đầu tiên của chuỗi
-        // console.log(myString.slice(-1));// Lấy kí tự cuối cùng của chuỗi
-        // console.log(myString);// Vẫn giữ nguyên chuỗi gốc
+        console.log(text.lastIndexOf("world")); // 29
+        console.log(text.lastIndexOf("world", 25)); // 7
+        console.log(text.lastIndexOf("JavaScript")); // 38
+        console.log(text.lastIndexOf("Python")); // -1
+        */
 
-        // replace(): thay thế 1 chuỗi thành 1 chuỗi mới
-        // Nhưng chỉ thay thế chuỗi đầu tiên mà nó tìm thấy
-        // Muốn thay thế được tất cả các từ tìm thấy thì phải dùng biểu thức chính quy
-        // Cú pháp: string.replace(searchValue, newValue);
-        // searchValue: từ khóa cần thay thế (bắt buộc)
-        // newValue: từ khóa mới để thay thế(bắt buộc)
+        /* 
+        slice(): hàm cắt một chuôi và trả về 1 chuỗi mới, chuỗi ban đầu không thay đổi
+        Cú pháp: string.slice(start, end);
+                              start: vị trí bắt đầu cắt
+                              end: vị trí kết thúc cắt (không bắt buộc)
+        Hàm slice(): sẽ cắt chuỗi từ vị trí start đến end - 1 tức là không bao gồm end
+        */
+        
+        /* 
+        var str = "0123456789";
+        console.log(str.slice(0,1)); // 0
+        console.log(str.slice(0,5)); // 01234
+        console.log(str.slice(-1)); // Lấy kí tự cuối cùng của chuỗi
+        console.log(str.slice(0)); // Cắt toàn bộ chuỗi
+        console.log(str); // chuỗi gốc vẫn được giữ nguyên
+        */
 
-        // var myString = "Xin chào! Tôi tên Nam. Tôi thần tượng Messi";
-        // console.log(myString.replace("Tôi", "Mình"));
-        // console.log(myString.replace(/Tôi/g, "Mình"));
+        /*
+        replace(): thay thế 1 chuỗi con trong 1 chuỗi bằng một chuỗi khác mà không làm thay
+        đổi chuỗi gốc mà trả về 1 chuỗi mới với các thay thế được thực hiện.
+        - Chỉ thay thế được chuỗi đầu tiên mà nó tìm thấy
+        - Muốn thay thế được tất cả chuỗi được tìm thấy thì phải dùng biểu thức chính quy
+        Cú pháp: string,replace(searchValue, newValue);
+                                searchValue: Chuỗi hoặc biểu thức chính quy của cho chuỗi con cần thay thế
+                                newValue: Chuỗi sẽ thay thế searchValue
+        */
 
-        // console.log(myString.toLowerCase());
-        // console.log(myString.toUpperCase());
+        /*  
+        var str = "Xin chào, tôi nên Nhuận, tôi thần tượng Messi";
+        // Thay thế "tôi" đầu tiên trong str bằng "Mình"
+        console.log(str.replace("tôi", "Mình"));
+        // Thay thế tất cả "tôi" trong str bằng "Mình"
+        console.log(str.replace(/tôi/g, "Mình"));
+        */
 
-        //trim(): để bỏ đi khoảng trắng ở hai đầu, các khoảng trắng giữa kí tự không bị loại bỏ
-        // var myString = "   Hello, Messi is GOAT   ";
-        // console.log(myString);
-        // console.log(myString.trim());
+        /* trim(): để bỏ đi khoảng trắng ở hai đầu, các khoảng trắng giữa kí tự không bị loại bỏ */
+
+        /* 
+        var myString = "   Hello, Messi is GOAT   ";
+        console.log(myString);
+        console.log(myString.trim());
+         */
 
         // var myString = "Hello, Messi is GOAT";
         // console.log(myString.charAt());// Lấy kí tự đầu tiên
@@ -202,7 +227,7 @@
         // console.log(result);// NaN
         // console.log(isNaN(result)); // True
 
-        //toString(): Chuyển kiểu số sang String
+        // toString(): Chuyển kiểu số sang String
         // variable.toString()
 
         // var a = 10;
@@ -228,27 +253,29 @@
 
         // Chuyển array về string bằng toString()
 
-        // var list = ["HTML", "CSS", "C++"];
-        // console.log(list.toString());
+        /*
+        var list = ["HTML", "CSS", "C++"];
+        console.log(list.toString()); // HTML,CSS,C++
+        */
 
-        //join(): Chuyển Array thành String. Thêm dấu bất kì để ngăn cách
+        // join(): Chuyển Array thành String. Thêm dấu bất kì để ngăn cách
         // giữa các phần tử
         // Cú pháp array.join(seperator)
-        // seperator  là dấu ngăn cách để thêm vào string, mặc định là dấu phẩy
+        // seperator là dấu ngăn cách để thêm vào string, mặc định là dấu phẩy
 
-        // var list = ["HTML", "CSS", "C++"];
-        // console.log(list.join());//HTML,CSS,C++
-        // console.log(list.join(",")); // HTML,CSS,C++
-        // console.log(list.join("")); //HTMLCSSC++
-        // console.log(list.join(", "));// HTML, CSS, C++
-        // console.log(list.join(" - ")); //HTML - CSS - C++
+        var list = ["HTML", "CSS", "C++"];
+        console.log(list.join()); // HTML,CSS,C++
+        console.log(list.join(",")); // HTML,CSS,C++
+        console.log(list.join("")); // HTMLCSSC++
+        console.log(list.join(", ")); // HTML, CSS, C++
+        console.log(list.join(" - ")); // HTML - CSS - C++
 
-        //pop(): Xóa phần tử cuối mảng và trả về phần tử cuối mảng đó
+        // pop(): Xóa phần tử cuối mảng và trả về phần tử cuối mảng đó
         // Cú pháp: array.pop()
 
         // var list = ["HTML", "CSS", "C++"];
-        // console.log(list.pop()); //C++
-        // console.log(list); //['HTML', 'CSS']
+        // console.log(list.pop()); // C++
+        // console.log(list); // ['HTML', 'CSS']
 
         // push(): Thêm 1 hoặc nhiều phần tử vào cuối mảng
         // Trả về độ dài mới của mảng
@@ -272,15 +299,18 @@
         // console.log(list.unshift("Boostrap 4", "Kotlin"));//5
         // console.log(list); // 'Boostrap 4', 'Kotlin', 'HTML', 'CSS', 'C++']
 
-        //splice(): Xóa hoặc chèn phần tử mới vào mảng. Trả về mảng bị xóa
+        // splice(): Xóa hoặc chèn phần tử mới vào mảng. Trả về mảng bị xóa
         // Cú pháp: array.splice(index, howmany, item1, item2,..., itemX);
         // index: Vị trí thêm/xóa phần tử bắt buộc
         // howmany: Số phần tử cần xóa(không bắt buộc)
         // item: Các phần tử mới được thêm vào(Không bắt buộc)
 
-        // var list = ["HTML", "CSS", "C++"];
-        // console.log(list.splice(2, 0, "Boostrap", "React"));//[]
-        // console.log(list); // ['HTML', 'CSS', 'Boostrap', 'React', 'C++']
+        /* 
+        let arr = [1, 2, 3, 4, 5];
+        let removed = arr.splice(2, 1); // Xóa 1 phần tử từ vị trí 2
+        console.log(arr); // Output: [1, 2, 4, 5]
+        console.log(removed); // Output: [3]
+         */
 
         //concat(): Dùng để nối 2 Array. Không làm ảnh hưởng đến mảng ban đầu
         // Cú pháp array1.concat(array2,array3,..,arrayN);
@@ -290,15 +320,17 @@
         // console.log(list1.concat(list2)); // ['HTML', 'CSS', 'C++', 'Boostrap', 'React']
         // console.log(list1); // ['HTML', 'CSS', 'C++']
 
-        //slice(): Cắt các phần tử. Không làm ảnh hưởng mảng ban đầu
+        // slice(): Cắt các phần tử. Không làm ảnh hưởng mảng ban đầu.
+        // Nếu chỉ số là âm, nó sẽ được đếm từ cuối mảng.
         // Cú pháp: array.slice(start, end);
 
+        /* 
         var list = ['HTML', 'CSS', 'Boostrap', 'React', 'C++'];
         console.log(list.slice(3));//['React', 'C++']
         console.log(list.slice(1,3));//['CSS', 'Boostrap']
         console.log(list.slice(-3, -1));//['Boostrap', 'React']
         console.log(list);//['HTML', 'CSS', 'Boostrap', 'React', 'C++']
-
+         */
 
     </script>
 
