@@ -38,46 +38,91 @@
         //     console.log(I);          
         // }
 
+        /*
+        - Vòng lặp for...in được sử dụng để lặp qua các thuộc tính liệt kê được của một đối tượng
+          (bao gồm cả các thuộc tính kế thừa thông qua prototype chain) 
+        - Cú pháp:
+            for(variable in object){
+                // Code to be executed
+            }
+            - variable: Biến nhận giá trị của từng thuộc tính của đối tượng trong mỗi lần lặp
+            - object: Đối tượng mà bạn muốn lặp qua thuộc tính của nó
+        */
 
-        // VÒNG LẶP FOR IN
-        var userInfor = {
-            fullName : "Nhuaanj",
-            age : 18,
-            address : "Huế",
+        /* 
+        const person = {
+            firtname: "Nhuan",
+            lastname: "Le",
+            age: 30
         };
 
-        console.log(userInfor);
-
-        for (const key in userInfor) {
-            console.log(key, userInfor[key]);
+        for (const key in person) {
+            console.log(key + ": " + person[key]);
         }
+         */
 
+        /*
+        - Vòng lặp for...of trong javascript được sử dụng để lặp qua các đối tượng lặp lại được
+          như mảng, chuỗi, Map, Set và các cấu trúc dữ liệu lặp lại được khác. for...of lặp qua 
+          các giá trị của đối tượng, không phải các thuộc tính như for...in.
+        - Cú pháp:
+          for (variable of iterable) {
+            // Code to be excuted
+          }
+        */
 
-        // VÒNG LẶP FOR OF
-        var user = ["le van a","la van b","Le van D"];
-
-        for (const iterator of user) {
-            console.log(iterator);
+        /* 
+        // for...of với mảng
+        const colors = ["red", "green", "blue"];
+        for (const color of colors) {
+            console.log(color);
         }
+        */
+        
+        /* 
+        // for...of với chuỗi
+        const str = "Hello";
+        for (const char of str) {
+            console.log(char);
+        }
+        */
+
+        /* 
+        // for...of với MAP
+        const map = new Map([
+            ['name', 'John'],
+            ['age', 30],
+            ['city', 'New York']
+        ]);
+
+        for (const [key, value] of map) {
+            console.log(key + ": " + value);
+        }
+        */
+
+        /* 
+        // for...of với SET
+        const set = new Set(["apple", "banana", "mango"]);
+        for (const value of set) {
+            console.log(value);
+        }
+        */
+
+        /* 
+          for...of không thể được sử dụng trực tiếp trên các đối tượng không lặp lại được. Nếu 
+          muốn lặp qua các thuộc tính của đối tượng, hãy sử dụng for...in hoặc các phương thức
+          khác như Object.keys(), Object.values(), hoặc Object.entries() kết hợp với for...of
+        */
 
 
-        var object = [
-            {
-                name:"Le Van A",
-                age: 18
-            },
-            {
-                name: "Le Van B",
-                age: 19
-            },
-            {
-                name: "Le Van C",
-                age:20
-            }
-        ];
+        const person = {
+            name: "John",
+            age: 3,
+            city: "New York"
+        };
 
-        for (const iterator of object) {
-            console.log(iterator);
+        for(let [key, value] of Object.entries(person)){
+            console.log(key + ": " + value);
         }
 
     </script>
