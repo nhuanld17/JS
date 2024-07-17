@@ -44,21 +44,21 @@
         - BOM WINDOW: là 1 đối tượng có những phương thức và thuộc tính được dùng để xử lí trình duyệt
         - Có cấp độ cao nhất
         */
-        // console.log(window);
+        console.log(window);
 
         // Lệnh console.log(window) trong JavaScript được sử dụng để in ra toàn bộ đối tượng window vào hộp thoại giao diện console của trình duyệt. window là một đối tượng toàn cục, nghĩa là nó có sẵn trong tất cả các script bạn đang viết. Đối tượng này chứa nhiều thuộc tính, phương thức và sự kiện liên quan đến cửa sổ trình duyệt hiện tại.
         // Ví dụ, nếu bạn muốn xem thông tin về màn hình hiện tại, bạn có thể gõ console.log(window.screen). Hoặc nếu bạn muốn xem những biến toàn cục nào đang được sử dụng, bạn có thể gõ console.log(window) và xem toàn bộ danh sách.
 
         // innerHeight VÀ innerWidth
-        //innerHeight: lấy chiều cao của tài liệu
-        //innerWidth: lấy chiều rộng của tài liệu
+        // innerHeight: lấy chiều cao của tài liệu
+        // innerWidth: lấy chiều rộng của tài liệu
 
         // Cú pháp:
         // window.innerHeight
         // window.innerWidth
 
-        // console.log(window.innerHeight);
-        // console.log(window.innerWidth);
+        console.log(window.innerHeight);
+        console.log(window.innerWidth);
 
         /* PHƯƠNG THỨC window.open()*/
 
@@ -81,19 +81,19 @@
         // Để đóng cửa sổ mà ta đã dùng lệnh open() để mở
         // Cú pháp: Gọi hàm mở cửa sổ
         
-            // var myWindow = window.open(url, name, option);
-            // // Gọi hàm đóng cửa sổ
-            // myWindow.close();
+            var myWindow = window.open(url, name, option);
+            // Gọi hàm đóng cửa sổ
+            myWindow.close();
         
-        // var tab;
+        var tab;
 
-        // function openTab() {
-        //     tab = window.open("https://www.messenger.com/", "OKE", "width=1200, height= 300, top= 100, left= 0");
-        // }
+        function openTab() {
+            tab = window.open("https://www.messenger.com/", "OKE", "width=1200, height= 300, top= 100, left= 0");
+        }
 
-        // function closeTab() {
-        //     tab.close();
-        // }
+        function closeTab() {
+            tab.close();
+        }
 
 
         /* window.location.href*/
