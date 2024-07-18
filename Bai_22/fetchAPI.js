@@ -28,7 +28,7 @@ const fetchAPI = (url) => {
     return result;
 };
 
-/* 
+
     // Ví dụ
     // GET CATEGORY
     fetch("https://dummyjson.com/products/category-list") // Gửi yêu cầu fetch
@@ -66,8 +66,8 @@ const fetchAPI = (url) => {
 
             document.querySelector("#products").innerHTML = htmls;
         })
- */
 
+        /*
         // Sử dụng hàm fetchAPI ở trên áp dụng vào GET CATEGORY và GET PRODUCT
         fetchAPI("https://dummyjson.com/products/category-list") // Trả về đối tượng JS
         .then((data) => {
@@ -95,5 +95,5 @@ const fetchAPI = (url) => {
             });
             document.querySelector("#products").innerHTML = htmls;
         });
-
+        */
 

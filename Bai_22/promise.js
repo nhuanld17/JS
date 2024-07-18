@@ -27,7 +27,7 @@
     + .catch: Nếu thất bại chạy vào đây
     + .finally: Luôn luôn chạy vào đây  
 */
-/* 
+
     var a = 10;
     var promise = new Promise((resolve, reject) => {
         if (a !== undefined && a !== null && a !== "") {
@@ -55,7 +55,7 @@
         .finally(() =>{
             console.log("luôn luôn chạy vào đây");
         })
- */
+
 /*
     Promise có 3 trạng thái:
     + Pending: Trạng thái ban đầu khi Promise được tạo. Promise đang chờ xử lý và chưa được hoàn thành (resolved) hoặc bị từ chối (rejected).
@@ -63,8 +63,8 @@
     + Rejected: Trạng thái khi Promise đã bị từ chối do có lỗi xảy ra, và lý do từ chối (error) đã được cung cấp.
  */    
 
-/* 
-    Ví dụ về pending:
+
+    // Ví dụ về pending:
     const myPromise = new Promise((resolve, reject) => {
         // Promise đang ở trạng thái pending
         setTimeout(() => {
@@ -73,7 +73,7 @@
     })
 
     console.log(myPromise); // output: Promise {<pending>}
- */
+
 
 /* 
     Ví dụ về Fulfilled:
@@ -126,7 +126,7 @@
         });
 */
 
-/* 
+
     // VÍ DỤ:
     const promise1 = new Promise((resolve, reject) => {
         setTimeout(() => {
@@ -153,7 +153,7 @@
         .catch((error) => {
             console.error(error);
         });
- */
+
 
 /* 
     // VÍ DỤ KHI CÓ 1 PROMISE BỊ TỪ CHỐI
