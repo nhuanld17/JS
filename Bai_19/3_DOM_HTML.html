@@ -21,9 +21,6 @@
         // let element = document.querySelector("h2").innerHTML;
         // console.log(element); // Nội dung hiện tại
 
-        let element = document.querySelector("h2").innerHTML;
-        console.log(element);
-
         // THAY ĐỔI NỘI DUNG CỦA 1 Element
         // Cú pháp:
 
@@ -31,18 +28,11 @@
         // element = document.querySelector("h2").innerHTML;
         // console.log(element); // Nội dung mới
 
-        document.querySelector("h2").innerHTML = "Nội dung mới";
-        element = document.querySelector("h2").innerHTML;
-        console.log(element);
-
         // element = document.querySelector("h3").innerHTML; // Lấy tất cả phần tử bên trong h3
         // console.log(element); 
         // <a href="">Link</a>
         // <a href="">Link1</a>
         // <a href="">Link2</a>
-
-        element = document.querySelector("h3").innerHTML;
-        console.log(element);
 
         // Lấy nội dung của thẻ a đầu tiên trong h3
         // element = document.querySelector("h3 a").innerHTML; 
@@ -53,9 +43,6 @@
         // Link
         // Link1
         // Link2
-
-        element = document.querySelector("h3").textContent;
-        console.log(element);
 
         // Lấy nội dung bên trong thẻ h3(bỏ ngắt dòng)
         // element = document.querySelector("h3").innerText; 
@@ -95,31 +82,31 @@
             document.querySelector("selector").setAttribute("attributeName","Nội dung mới");
         */
 
-        let productList = document.querySelectorAll(".product-item");
-        console.log(productList); // [div.product-item, div.product-item]
+        // let productList = document.querySelectorAll(".product-item");
+        // console.log(productList); // [div.product-item, div.product-item]
 
-        productList.forEach(element => {
-            console.log(element);
-        });
-        // div.product-item
-        // div.product-item
+        // productList.forEach(element => {
+        //     console.log(element);
+        // });
+        // // div.product-item
+        // // div.product-item
 
-        let cart = [];
+        // let cart = [];
 
-        productList.forEach(element => {
-            let id = element.getAttribute("data-id");
-            cart.push(id);
-        });
+        // productList.forEach(element => {
+        //     let id = element.getAttribute("data-id");
+        //     cart.push(id);
+        // });
 
-        console.log(cart); // ['1234', '1235']
+        // console.log(cart); // ['1234', '1235']
 
-        productList.forEach(element => {
-            element.setAttribute("category","auto"); 
-        });
+        // productList.forEach(element => {
+        //     element.setAttribute("category","auto"); 
+        // });
 
-        productList.forEach(element => {
-            console.log(element.getAttribute("category"));
-        });
+        // productList.forEach(element => {
+        //     console.log(element.getAttribute("category"));
+        // });
         // auto
         // auto
     </script>

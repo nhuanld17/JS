@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu-open{
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
+
+        .menu-close{
+            width: 250px;
+            position: fixed;
+            background: orange;
+            top: 0;
+            left: 0;
+            margin-left: 0;
+            display: none;
+        }
+
+        .menu-close.open{
+            display: block;
+        }
+
+        .menu-close .button-close{
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .menu-close ul{
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .menu-close ul li {
+            padding: 10px;
+
+            border-bottom: 1px solid #000000;
+        }
+    </style>
+
+    <div class="menu-close" id="menu">
+        <button class="button-close" id="buttonClose">
+            X
+        </button>
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+    </div>
+
+    <button class="menu-open" id="buttonOpen">
+        Open
+    </button>
+
+    <script>
+        const buttonOpenMenu = document.querySelector("#buttonOpen");
+        const menu = document.querySelector(".menu-close");
+
+        buttonOpenMenu.onclick = function () {
+            menu.classList.add("open");
+        }
+
+        const buttonCloseMenu = document.querySelector(".menu-close .button-close");
+        buttonCloseMenu.onclick = function() {
+            menu.classList.remove("open");
+        }
+    </script>
+</body>
+</html>

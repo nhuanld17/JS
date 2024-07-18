@@ -37,15 +37,13 @@
         */
 
         // const box = document.getElementById("box");
-        // console.log(box.outerHTML); //<div class="light" id="box">Nội dung thẻ DIV</div>
+        // console.log(box.outerHTML); // <div class="light" id="box">Nội dung thẻ DIV</div>
 
-        const box = document.getElementById("box");
+        // const box = document.getElementById("box");
 
-        // Thêm classname là dark vào thẻ div
+        // Thêm class có tên là dark vào thẻ div
         // box.classList.add("dark");
-        // console.log(box.outerHTML); // <div class="light dark" id="box">Nội dung thẻ DIV</div>
-
-        box.classList.add("dark");
+        // console.log(box.outerHTML);
 
         /*
             Note: Vì sao lại sử dụng "console.log(box.outerHTML);" thay vì "console.log(box);" trong ví dụ trên ? Vì kết quả trong Console của trình duyệt là động, khi sử dụng console.log() để in ra 1 đối tượng DOM trong hầu hết các trình duyệt hiện đại, bạn đang thực sự in ra 1 tham chiếu đến đối tượng đó, không phải là 1 bản sao tĩnh của nó tại thời điểm gọi console.log(). 
@@ -72,8 +70,7 @@
         // VD:
         /*
             const divElement = document.getElementsByTagName("div");
-            console.log(divElement);
-            // [div#box.light, div, div, box: div#box.light]
+            console.log(divElement); // [div#box.light, div, div, box: div#box.light]
             console.log(divElement[0].outerHTML); // <div class="light" id="box">Nội dung thẻ DIV</div>
             console.log(divElement[1].outerHTML); // <div>Nội dung div2</div>
             console.log(divElement[2].outerHTML); // <div>Nội dung div3</div>
@@ -167,6 +164,20 @@
 
             console.log(element); // [a.link.active, a.link.active]
         */
+        var element = document.querySelectorAll(".box1 .box2 h2 .link");
+        console.log(element);
+
+        element.forEach(
+            item => {
+                console.log("Trước khi thêm class active");
+                console.log(item.outerHTML);
+                console.log("Sau khi thêm class active");
+                item.classList.add("active");
+                console.log(item.outerHTML);
+            }
+        );
+
+
     </script>
 </body>
 </html>

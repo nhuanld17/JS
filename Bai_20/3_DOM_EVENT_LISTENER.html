@@ -31,21 +31,21 @@
         }
 
         const button = document.querySelector("#button");
-        // button.onclick = function(){
-        //     A();
-        //     B();
-        // };
+        button.onclick = function(){
+            A();
+            B();
+        };
 
-        button.addEventListener("click",A);
+        // button.addEventListener("click",A);
 
-        button.addEventListener("click",B);
+        // button.addEventListener("click",B);
 
         // Output: Khi chọn vào nút button, thì cả hai hàm A() và B() đều được gọi, khác với onclick khi chỉ chạy hàm B();
 
         // Gỡ bỏ sự kiện click chạy hàm B sau 5 giây
-        setTimeout(() => {
-            button.removeEventListener("click",B);
-        }, 5000);
+        // setTimeout(() => {
+        //     button.removeEventListener("click",B);
+        // }, 5000);
     </script>
 </body>
 </html>

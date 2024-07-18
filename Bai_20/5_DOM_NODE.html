@@ -34,6 +34,8 @@
         // </div>
     </script>
 
+    <p id="paragraph">Nội dung ban đầu</p>
+
     <script>
         /*  document.createTextNode()  */
         /*
@@ -42,13 +44,24 @@
                 var tenBien = document.createTextNode("Nội dung...");
         */
 
-        // const div = document.createElement("div");
-        // const text = document.createTextNode("Quảng cáo");
-        // div.appendChild(text);
-        // console.log(div);
+        /*
+        const textNode = document.createTextNode("Đây là nội dung văn bản");
 
-        // const divAds = document.querySelector(".content");
-        // divAds.appendChild(div);
+        // Chọn phần tử div content
+        const content = document.querySelector(".content");
+
+        // Chèn nút văn bản vào bên trong div
+        content.appendChild(textNode);
+        */ 
+
+        // Tạo nút văn bản
+        const newText = document.createTextNode(". Nội dung thêm vào");
+
+        // Chọn phần tử p bằng id
+        const paragraph = document.getElementById("paragraph");
+
+        // Chèn nút văn bản vào cuối phần tử p
+        paragraph.appendChild(newText);
     </script>
 
     <ul id="menu">
@@ -86,6 +99,27 @@
         //         menu.removeChild(listItem);
         //     }
         // };
+
+        // const menu = document.querySelector("#menu");
+        // const button = document.querySelector("#buttonAdd");
+
+
+
+        // button.addEventListener("click", function() {
+        //     const newItem = document.createElement("li");
+        //     newItem.innerHTML = "Item mới";
+        //     console.log(newItem.outerHTML);
+        //     menu.appendChild(newItem); 
+        // });
+
+        // button.addEventListener("click", function() {
+        //     const listItem = menu.querySelector("li"); 
+        //     if (listItem) {
+        //         menu.removeChild(listItem);
+        //     } else {
+        //         alert("Đã hết item");
+        //     }
+        // });
     </script>
 
     <script>
@@ -95,18 +129,31 @@
             - Cú pháp:
                     element_parent.replaceChild(node_insert,node_remove);
         */
+        // const menu = document.querySelector("#menu");
+        // const button = document.querySelector("#buttonAdd");
+
+        // const listItem = menu.querySelectorAll("li");
+
+        // listItem.forEach(item => {
+        //     const newItem = document.createElement("li");
+        //     newItem.innerHTML = "item mới";
+        //     item.onclick = function () {
+        //         menu.replaceChild(newItem, item);
+        //     }
+        // })  
+
         const menu = document.querySelector("#menu");
-        const button = document.querySelector("#buttonAdd");
+        const button = document.querySelector("buttonAdd");
 
         const listItem = menu.querySelectorAll("li");
 
-        listItem.forEach(item => {
+        listItem.forEach(element => {
             const newItem = document.createElement("li");
-            newItem.innerHTML = "item mới";
-            item.onclick = function () {
-                menu.replaceChild(newItem, item);
-            }
-        })  
+            newItem.innerHTML = "New Item";
+            element.addEventListener("click",function() {
+                menu.replaceChild(newItem, element);
+            })
+        });
     </script>
 </body>
 

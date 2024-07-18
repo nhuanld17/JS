@@ -35,12 +35,12 @@
         // console.log(menu); // null
 
         // // vì câu lệnh được thực thi trước khi phần tử <ul> được tải lên, nên in ra null, do đó, muốn lấy được phần tử <ul> thì phải sử dụng onload, hàm onload sẽ đợi cho các phần tử trong trang web load xong thì mới chạy chương trình bên trong nó
-        /*
-        window.onload = function(){
-            const menu = document.querySelector("#menu");
-            console.log(menu.outerHTML);
-        };
-        */
+        
+        // window.onload = function(){
+        //     const menu = document.querySelector("#menu");
+        //     console.log(menu.outerHTML);
+        // };
+       
         /*
         output: 
         <ul id="menu">
@@ -95,6 +95,15 @@
         // inputname.onkeyup = function(){
         //     console.log("OKE");
         // };
+
+        const inputname = document.querySelector("#input-name");
+        inputname.onkeydown = function () {
+            console.log("1 phím đã được người dùng nhấn");
+        };
+
+        inputname.onkeyup = function() {
+            console.log("1 phìm vừa nhấn đã được thả ra");
+        }
     </script>
 
     <select name="" id="option">
@@ -105,11 +114,17 @@
 
     <script>
         /*====== onchange ======*/
+        // const option = document.querySelector("#option");
+        // option.onchange = function() {
+        //     let currentOption = option.value;
+        //     console.log(currentOption);
+        // };
+
         const option = document.querySelector("#option");
-        option.onchange = function() {
+        option.onchange = function () {
             let currentOption = option.value;
             console.log(currentOption);
-        };
+        }
     </script>
 
 </body>
