@@ -13,10 +13,10 @@
 
     <script>
         
-        console.log(this); 
+        // console.log(this); 
         // Window {window: Window, self: Window, document: document, name: '', location: Location, …}
-        console.log(this.location.href); // http://127.0.0.1:5500/Bai_21/4_THIS_KEYWORD.html
-        console.log(window.location.href); // http://127.0.0.1:5500/Bai_21/4_THIS_KEYWORD.html
+        // console.log(this.location.href); // http://127.0.0.1:5500/Bai_21/4_THIS_KEYWORD.html
+        // console.log(window.location.href); // http://127.0.0.1:5500/Bai_21/4_THIS_KEYWORD.html
 
     </script>
 
@@ -67,6 +67,20 @@
         //         console.log(this); // tương đương console.log(element);
         //     });
         // });
+
+        const button = document.querySelector("#button");
+        button.addEventListener("click", function() {
+            console.log(this);
+        });
+
+        const listItem = document.querySelectorAll("#menu li");
+        console.log(listItem);
+
+        listItem.forEach(element => {
+            element.addEventListener("click", function() {
+                console.log(this.outerHTML); 
+            })
+        });
     </script>
 
     <script>
