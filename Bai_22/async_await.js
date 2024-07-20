@@ -25,8 +25,7 @@ await tạm dừng việc thực thi của hàm async cho đến khi Promise đ�
 
     fetchData("https://dummyjson.com/products/category-list");
 */
-
-/* 
+/*  
     // VÍ DỤ 1:
     const fetchAPI = async () => {
         // Dùng await để chờ cho đến khi Promise kết thúc và trả về kết quả
@@ -40,7 +39,7 @@ await tạm dừng việc thực thi của hàm async cho đến khi Promise đ�
     fetchAPI();
 */
     /* ÁP DỤNG VÀO GET CATEGORY và GET PRODUCT */
-
+    /*
     const fetchAPI = async (url) => {
         // Dùng await để chờ cho đến khi Promise kết thúc và trả về kết quả
         const respone = await fetch(url);
@@ -76,4 +75,4 @@ await tạm dừng việc thực thi của hàm async cho đến khi Promise đ�
             document.querySelector("#products").innerHTML = htmls;
         });
 
-
+    */
